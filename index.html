@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Polder Ink Press – Cozy States Coloring Books</title>
+<meta name="description" content="Cozy States Coloring Books by Polder Ink Press: relaxing adult coloring books with landmarks, small towns, local food and slow, cozy moments from across the United States.">
+<!-- PINTEREST-VERIFY -->
+<meta property="og:title" content="Cozy States Coloring Books – Polder Ink Press">
+<meta property="og:description" content="Relaxing adult coloring books with cozy scenes from across the United States.">
+<meta property="og:image" content="https://polderinkpress.github.io/assets/series-cover.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/logo-mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1E2A44; --green:#4E7A45; --green-2:#6E9A5C; --cream:#F3F0E7; --paper:#FBFAF6;
+    --ink:#22283A; --muted:#5D6475; --line:#DDD8CB;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--cream);color:var(--ink);font:400 17px/1.6 Poppins,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+  header{padding:22px 0}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+  .brand img{width:44px;height:44px}
+  .brand b{font:700 22px/1 Fraunces,Georgia,serif;color:var(--navy);letter-spacing:-.01em}
+  .brand small{display:block;font:500 10px/1 Poppins,sans-serif;letter-spacing:.32em;color:var(--green);margin-top:5px}
+  nav{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+  nav .links{display:flex;gap:22px;font-size:15px;font-weight:500}
+  nav .links a{text-decoration:none;color:var(--navy)}
+  nav .links a:hover{color:var(--green)}
+
+  .hero{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center;padding:36px 0 64px}
+  .eyebrow{font-size:13px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--green)}
+  h1{font:700 clamp(36px,5.2vw,58px)/1.05 Fraunces,Georgia,serif;color:var(--navy);margin:12px 0 18px;letter-spacing:-.02em}
+  .lead{font-size:19px;color:var(--muted);max-width:30em;margin:0 0 28px}
+  .btns{display:flex;gap:12px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:13px 22px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none;transition:transform .15s,background .15s}
+  .btn:hover{transform:translateY(-1px)}
+  .btn-primary{background:var(--navy);color:var(--cream)}
+  .btn-primary:hover{background:#2B3A5C}
+  .btn-ghost{border:1.5px solid var(--navy);color:var(--navy)}
+  .hero-art{position:relative;height:440px}
+  .hero-art img{position:absolute;width:52%;border-radius:4px;box-shadow:0 18px 40px rgba(30,42,68,.22)}
+  .hero-art img:nth-child(1){left:0;top:40px;transform:rotate(-6deg)}
+  .hero-art img:nth-child(2){left:24%;top:0;z-index:2}
+  .hero-art img:nth-child(3){right:0;top:48px;transform:rotate(6deg)}
+
+  section{padding:64px 0}
+  .section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:32px;flex-wrap:wrap}
+  h2{font:700 clamp(28px,3.4vw,38px)/1.15 Fraunces,Georgia,serif;color:var(--navy);margin:6px 0 0;letter-spacing:-.01em}
+  .section-head p{margin:0;color:var(--muted);max-width:28em}
+
+  .books{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:28px}
+  .book{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px 16px 20px;display:flex;flex-direction:column}
+  .book img{border-radius:4px;box-shadow:0 8px 20px rgba(30,42,68,.14);aspect-ratio:600/776;object-fit:cover}
+  .book h3{font:700 21px/1.2 Fraunces,Georgia,serif;color:var(--navy);margin:16px 0 4px}
+  .book .meta{font-size:13px;color:var(--green);font-weight:600;margin-bottom:8px}
+  .book p{font-size:14.5px;color:var(--muted);margin:0 0 16px;flex:1}
+  .book .btn{align-self:flex-start;padding:10px 18px;font-size:14px}
+  .book.special{border-color:#C7A24A}
+  .tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:#B23A3A;color:#fff;padding:3px 8px;border-radius:999px;margin-left:6px;vertical-align:3px}
+
+  .features{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .feature{border-top:3px solid var(--green);padding-top:14px}
+  .feature b{display:block;color:var(--navy);font-size:16px;margin-bottom:4px}
+  .feature span{font-size:14.5px;color:var(--muted)}
+
+  .free{background:var(--navy);color:var(--cream);border-radius:22px;padding:44px;display:grid;grid-template-columns:260px 1fr;gap:44px;align-items:center}
+  .free img{background:#fff;border-radius:6px;padding:10px;box-shadow:0 16px 40px rgba(0,0,0,.3);transform:rotate(-3deg)}
+  .free h2{color:var(--cream)}
+  .free p{color:#C9CEDA;margin:12px 0 24px;max-width:34em}
+  .free .btn-primary{background:var(--cream);color:var(--navy)}
+  .free small{display:block;margin-top:14px;color:#9AA3B8;font-size:13px}
+
+  footer{padding:48px 0 40px;font-size:14px;color:var(--muted);border-top:1px solid var(--line);margin-top:64px}
+  footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+  footer a{text-decoration:none;font-weight:500;color:var(--navy)}
+  footer .social{display:flex;gap:18px}
+
+  @media (max-width:860px){
+    .hero{grid-template-columns:1fr;gap:28px;padding-top:12px}
+    .hero-art{height:340px;max-width:440px}
+    .features{grid-template-columns:1fr 1fr}
+    .free{grid-template-columns:1fr;padding:30px;gap:28px}
+    .free img{max-width:200px}
+    nav .links{display:none}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="./"><img src="assets/logo-mark.svg" alt=""><span><b>Polder</b><small>INK PRESS</small></span></a>
+      <div class="links"><a href="#books">The books</a><a href="#free">Free page</a><a href="https://www.pinterest.com/polderinkpress/">Pinterest</a><a href="https://www.instagram.com/polderinkpress/">Instagram</a></div>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <div>
+      <div class="eyebrow">Cozy States Coloring Books</div>
+      <h1>Slow down and color your way across America.</h1>
+      <p class="lead">Relaxing coloring books for adults, full of landmarks, small towns, local food and quiet, cozy moments. Bold, easy lines and one scene per page, so you can unwind in an evening.</p>
+      <div class="btns"><a class="btn btn-primary" href="#books">See the books</a><a class="btn btn-ghost" href="#free">Get a free page</a></div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <img src="assets/covers/cover-VT.jpg" alt="">
+      <img src="assets/covers/cover-XB.jpg" alt="">
+      <img src="assets/covers/cover-CO.jpg" alt="">
+    </div>
+  </div>
+
+  <section id="books">
+    <div class="wrap">
+      <div class="section-head">
+        <div><div class="eyebrow">The series</div><h2>Seven cozy coloring books</h2></div>
+        <p>Every page shows a real place and is captioned with its name. All books are available as paperbacks on Amazon.</p>
+      </div>
+      <div class="books">
+        <article class="book special">
+          <img src="assets/covers/cover-XB.jpg" alt="Cover of Cozy Christmas Bears coloring book" loading="lazy">
+          <h3>Cozy Christmas Bears <span class="tag">Holiday</span></h3>
+          <div class="meta">50 detailed scenes · all 50 states</div>
+          <p>Two teddy bears on a holiday road trip across America, with one festive scene for every state.</p>
+          <a class="btn btn-primary" data-book="XB" href="https://www.amazon.com/s?k=Cozy+Christmas+Bears+Polder+Ink+Press&i=stripbooks">View on Amazon</a>
+        </article>
+        <article class="book">
+          <img src="assets/covers/cover-VT.jpg" alt="Cover of Cozy Vermont coloring book" loading="lazy">
+          <h3>Cozy Vermont</h3>
+          <div class="meta">40 bold &amp; easy scenes</div>
+          <p>Covered bridges, village commons, maple sugaring and fall color.</p>
+          <a class="btn btn-primary" data-book="VT" href="https://www.amazon.com/s?k=Cozy+Vermont+Polder+Ink+Press&i=stripbooks">View on Amazon</a>
+        </article>
+        <article class="book">
+          <img src="assets/covers/cover-HI.jpg" alt="Cover of Cozy Hawaii coloring book" loading="lazy">
+          <h3>Cozy Hawaii</h3>
+          <div class="meta">40 bold &amp; easy scenes</div>
+          <p>Beaches, volcanoes, island towns and shave ice in the sun.</p>
+          <a class="btn btn-primary" data-book="HI" href="https://www.amazon.com/s?k=Cozy+Hawaii+Polder+Ink+Press&i=stripbooks">View on Amazon</a>
+        </article>
+        <article class="book">
+          <img src="assets/covers/cover-NY.jpg" alt="Cover of Cozy New York coloring book" loading="lazy">
+          <h3>Cozy New York</h3>
+          <div class="meta">40 bold &amp; easy scenes</div>
+          <p>City streets, brownstones, bagels and autumn orchards upstate.</p>
+          <a class="btn btn-primary" data-book="NY" href="https://www.amazon.com/s?k=Cozy+New+York+Polder+Ink+Press&i=stripbooks">View on Amazon</a>
+        </article>
+        <article class="book">
+          <img src="assets/covers/cover-TX.jpg" alt="Cover of Cozy Texas coloring book" loading="lazy">
+          <h3>Cozy Texas</h3>
+          <div class="meta">40 bold &amp; easy scenes</div>
+          <p>Hill Country, bluebonnets, BBQ and ranch life.</p>
+          <a class="btn btn-primary" data-book="TX" href="https://www.amazon.com/s?k=Cozy+Texas+Polder+Ink+Press&i=stripbooks">View on Amazon</a>
+        </article>
+        <article class="book">
+          <img src="assets/covers/cover-OR.jpg" alt="Cover of Cozy Oregon coloring book" loading="lazy">
+          <h3>Cozy Oregon</h3>
+          <div class="meta">40 bold &amp; easy scenes</div>
+          <p>Rocky coast, waterfalls, forest cabins and rainy-day cafes.</p>
+          <a class="btn btn-primary" data-book="OR" href="https://www.amazon.com/s?k=Cozy+Oregon+Polder+Ink+Press&i=stripbooks">View on Amazon</a>
+        </article>
+        <article class="book">
+          <img src="assets/covers/cover-CO.jpg" alt="Cover of Cozy Colorado coloring book" loading="lazy">
+          <h3>Cozy Colorado</h3>
+          <div class="meta">40 bold &amp; easy scenes</div>
+          <p>Mountain lakes, ski towns, wildlife and campfires.</p>
+          <a class="btn btn-primary" data-book="CO" href="https://www.amazon.com/s?k=Cozy+Colorado+Polder+Ink+Press&i=stripbooks">View on Amazon</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap features">
+      <div class="feature"><b>Single-sided pages</b><span>Blank backs, so markers don't bleed onto the next scene.</span></div>
+      <div class="feature"><b>Real places</b><span>Every page is captioned, with an overview of all places at the back.</span></div>
+      <div class="feature"><b>Bold &amp; easy lines</b><span>Relaxing to color with pencils or markers, no tiny details.</span></div>
+      <div class="feature"><b>8.5 x 11 inch</b><span>Large pages with room to blend and shade.</span></div>
+    </div>
+  </section>
+
+  <section id="free">
+    <div class="wrap">
+      <div class="free">
+        <img src="free/vermont-covered-bridge-preview.png" alt="Coloring page: a picnic by a covered bridge in Vermont" loading="lazy">
+        <div>
+          <div class="eyebrow" style="color:#A9C99A">Free printable</div>
+          <h2>A covered bridge picnic in Vermont</h2>
+          <p>Try a page from Cozy Vermont. Print it on letter or A4 paper, grab your pencils and enjoy a slow autumn afternoon.</p>
+          <a class="btn btn-primary" href="free/vermont-covered-bridge.pdf" download>Download the PDF</a>
+          <small>Free for personal use. Please don't resell or redistribute.</small>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 Polder Ink Press · Cozy States Coloring Books</div>
+    <div class="social"><a href="https://www.pinterest.com/polderinkpress/">Pinterest</a><a href="https://www.instagram.com/polderinkpress/">Instagram</a></div>
+  </div>
+</footer>
+</body>
+</html>
