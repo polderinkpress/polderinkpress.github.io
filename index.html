@@ -71,6 +71,16 @@
   .feature b{display:block;color:var(--navy);font-size:16px;margin-bottom:4px}
   .feature span{font-size:14.5px;color:var(--muted)}
 
+  .freegrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:900px;margin:0 auto}
+  @media(max-width:860px){.freegrid{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:520px){.freegrid{grid-template-columns:1fr}}
+  .freecard{background:#fff;border-radius:16px;padding:16px;box-shadow:0 8px 24px rgba(0,0,0,.08);display:flex;flex-direction:column;gap:8px;scroll-margin-top:90px}
+  .freecard img{width:100%;border:1px solid #e6e1d4;border-radius:6px}
+  .freecard h3{font-size:18px;margin:6px 0 0}
+  .freecard p{font-size:14px;margin:0;flex:1}
+  .freecard .btn{text-align:center}
+  .freecard .more{font-size:14px;text-align:center;color:var(--navy)}
+  .freecard:target{outline:3px solid #A9C99A}
   .free{background:var(--navy);color:var(--cream);border-radius:22px;padding:44px;display:grid;grid-template-columns:260px 1fr;gap:44px;align-items:center}
   .free img{background:#fff;border-radius:6px;padding:10px;box-shadow:0 16px 40px rgba(0,0,0,.3);transform:rotate(-3deg)}
   .free h2{color:var(--cream)}
@@ -104,7 +114,7 @@
   <div class="wrap">
     <nav>
       <a class="brand" href="./"><img src="assets/logo-mark.svg" alt=""><span><b>Polder</b><small>INK PRESS</small></span></a>
-      <div class="links"><a href="#books">The books</a><a href="#free">Free page</a><a href="https://www.pinterest.com/polderinkpress/">Pinterest</a><a href="https://www.instagram.com/polderinkpress/">Instagram</a></div>
+      <div class="links"><a href="#books">The books</a><a href="#free">Free pages</a><a href="https://www.pinterest.com/polderinkpress/">Pinterest</a><a href="https://www.instagram.com/polderinkpress/">Instagram</a></div>
     </nav>
   </div>
 </header>
@@ -115,7 +125,7 @@
       <div class="eyebrow">Cozy States Coloring Books</div>
       <h1>Slow down and color your way across America.</h1>
       <p class="lead">Relaxing coloring books for adults, full of landmarks, small towns, local food and quiet, cozy moments. Bold, easy lines and one scene per page, so you can unwind in an evening.</p>
-      <div class="btns"><a class="btn btn-primary" href="#books">See the books</a><a class="btn btn-ghost" href="#free">Get a free page</a></div>
+      <div class="btns"><a class="btn btn-primary" href="#books">See the books</a><a class="btn btn-ghost" href="#free">Get free pages</a></div>
     </div>
     <div class="hero-art" aria-hidden="true">
       <img src="assets/covers/cover-WB.jpg" alt="">
@@ -209,15 +219,74 @@
 
   <section id="free">
     <div class="wrap">
-      <div class="free">
-        <img src="free/vermont-covered-bridge-preview.png" alt="Coloring page: a picnic by a covered bridge in Vermont" loading="lazy">
-        <div>
-          <div class="eyebrow" style="color:#A9C99A">Free printable</div>
-          <h2>A covered bridge picnic in Vermont</h2>
-          <p>Try a page from Cozy Vermont. Print it on letter or A4 paper, grab your pencils and enjoy a slow autumn afternoon.</p>
+      <div class="section-head">
+        <div><div class="eyebrow">Free printables</div><h2>Free coloring pages for adults</h2></div>
+        <p>One free page from every book. Print on letter or A4 paper, grab your pencils and enjoy a slow, cozy evening. Free for personal use; please don't resell or redistribute.</p>
+      </div>
+      <div class="freegrid">
+        <article class="freecard" id="free-xb">
+          <img src="free/christmas-bears-vermont-preview.png" alt="Free coloring page: Christmas sleigh ride" loading="lazy">
+          <h3>Christmas sleigh ride</h3>
+          <p>Two teddy bears on a horse-drawn sleigh past a snowy village church.</p>
+          <a class="btn btn-primary" href="free/christmas-bears-vermont.pdf" download>Download the PDF</a>
+          <a class="more" href="https://www.amazon.com/dp/B0HNHCJZR9">From Cozy Christmas Bears &rarr;</a>
+        </article>
+        <article class="freecard" id="free-wb">
+          <img src="free/winter-bears-minnesota-preview.png" alt="Free coloring page: Snowshoeing by the lighthouse" loading="lazy">
+          <h3>Snowshoeing by the lighthouse</h3>
+          <p>Two teddy bears on snowshoes along a frozen lakeshore.</p>
+          <a class="btn btn-primary" href="free/winter-bears-minnesota.pdf" download>Download the PDF</a>
+          <a class="more" href="https://www.amazon.com/dp/B0HP7YYRQV">From Cozy Winter Bears &rarr;</a>
+        </article>
+        <article class="freecard" id="free-vt">
+          <img src="free/vermont-covered-bridge-preview.png" alt="Free coloring page: Covered bridge picnic" loading="lazy">
+          <h3>Covered bridge picnic</h3>
+          <p>An autumn picnic by a covered bridge and a village church.</p>
           <a class="btn btn-primary" href="free/vermont-covered-bridge.pdf" download>Download the PDF</a>
-          <small>Free for personal use. Please don't resell or redistribute.</small>
-        </div>
+          <a class="more" href="https://www.amazon.com/dp/B0HNHHZWDX">From Cozy Vermont &rarr;</a>
+        </article>
+        <article class="freecard" id="free-ny">
+          <img src="free/new-york-cider-donuts-preview.png" alt="Free coloring page: Cider donuts at the orchard" loading="lazy">
+          <h3>Cider donuts at the orchard</h3>
+          <p>Warm donuts and cider at a farm stand upstate.</p>
+          <a class="btn btn-primary" href="free/new-york-cider-donuts.pdf" download>Download the PDF</a>
+          <a class="more" href="https://www.amazon.com/dp/B0HMPQ6885">From Cozy New York &rarr;</a>
+        </article>
+        <article class="freecard" id="free-tx">
+          <img src="free/texas-pumpkin-patch-preview.png" alt="Free coloring page: Pumpkin patch" loading="lazy">
+          <h3>Pumpkin patch</h3>
+          <p>Hay bales, a wagon and pumpkins on a fall afternoon.</p>
+          <a class="btn btn-primary" href="free/texas-pumpkin-patch.pdf" download>Download the PDF</a>
+          <a class="more" href="https://www.amazon.com/dp/B0HLZFLBX1">From Cozy Texas &rarr;</a>
+        </article>
+        <article class="freecard" id="free-me">
+          <img src="free/maine-painting-buoys-preview.png" alt="Free coloring page: Painting buoys" loading="lazy">
+          <h3>Painting buoys</h3>
+          <p>Painting lobster buoys by a fishing shack on the harbor.</p>
+          <a class="btn btn-primary" href="free/maine-painting-buoys.pdf" download>Download the PDF</a>
+          <a class="more" href="https://www.amazon.com/dp/B0HP7VG8DT">From Cozy Maine &rarr;</a>
+        </article>
+        <article class="freecard" id="free-or">
+          <img src="free/oregon-bookstore-preview.png" alt="Free coloring page: A rainy day in the bookstore" loading="lazy">
+          <h3>A rainy day in the bookstore</h3>
+          <p>A comfy chair, tall shelves and a cat on a stack of books.</p>
+          <a class="btn btn-primary" href="free/oregon-bookstore.pdf" download>Download the PDF</a>
+          <a class="more" href="https://www.amazon.com/dp/B0HLY35MB3">From Cozy Oregon &rarr;</a>
+        </article>
+        <article class="freecard" id="free-co">
+          <img src="free/colorado-campfire-preview.png" alt="Free coloring page: Campfire under the stars" loading="lazy">
+          <h3>Campfire under the stars</h3>
+          <p>Marshmallows, a guitar and a tent among the pines.</p>
+          <a class="btn btn-primary" href="free/colorado-campfire.pdf" download>Download the PDF</a>
+          <a class="more" href="https://www.amazon.com/dp/B0HMP3WBZY">From Cozy Colorado &rarr;</a>
+        </article>
+        <article class="freecard" id="free-hi">
+          <img src="free/hawaii-sunset-picnic-preview.png" alt="Free coloring page: Sunset beach picnic" loading="lazy">
+          <h3>Sunset beach picnic</h3>
+          <p>A picnic on the sand under the palms as the sun goes down.</p>
+          <a class="btn btn-primary" href="free/hawaii-sunset-picnic.pdf" download>Download the PDF</a>
+          <a class="more" href="https://www.amazon.com/dp/B0HMPRHBPT">From Cozy Hawaii &rarr;</a>
+        </article>
       </div>
     </div>
   </section>
