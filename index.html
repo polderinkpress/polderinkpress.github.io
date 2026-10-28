@@ -13,290 +13,355 @@
 <link rel="icon" href="assets/logo-mark.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,500..700,100&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --navy:#1E2A44; --green:#4E7A45; --green-2:#6E9A5C; --cream:#F3F0E7; --paper:#FBFAF6;
-    --ink:#22283A; --muted:#5D6475; --line:#DDD8CB;
+    --ink:#1E2A44;        /* logo navy */
+    --field:#4E7A45;      /* logo green */
+    --field-light:#6E9A5C;
+    --ditch:#9CC3DA;      /* logo stripes */
+    --sky:#E8F0F2;
+    --paper:#FFFDF9;
+    --lamp:#E9B44C;       /* warm accent: the reading lamp */
+    --muted:#566074;
+    --line:#E3E0D8;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{margin:0;overflow-x:hidden;background:var(--cream);color:var(--ink);font:400 17px/1.6 Poppins,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  body{margin:0;overflow-x:hidden;background:var(--paper);color:var(--ink);font:400 17px/1.65 Poppins,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
   img{max-width:100%;display:block}
   a{color:inherit}
-  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
-  header{padding:22px 0}
+  a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--lamp);outline-offset:3px;border-radius:4px}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+  h1,h2,h3{font-family:Fraunces,Georgia,serif;font-variation-settings:"SOFT" 100;color:var(--ink);margin:0}
+
+  /* Header */
+  .top{background:var(--sky)}
+  .top nav{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0}
   .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-  .brand img{width:44px;height:44px}
-  .brand b{font:700 22px/1 Fraunces,Georgia,serif;color:var(--navy);letter-spacing:-.01em}
-  .brand small{display:block;font:500 10px/1 Poppins,sans-serif;letter-spacing:.32em;color:var(--green);margin-top:5px}
-  nav{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
-  nav .links{display:flex;gap:22px;font-size:15px;font-weight:500}
-  nav .links a{text-decoration:none;color:var(--navy)}
-  nav .links a:hover{color:var(--green)}
+  .brand img{width:46px;height:46px}
+  .brand b{font:700 24px/1 Fraunces,Georgia,serif;font-variation-settings:"SOFT" 100;letter-spacing:-.01em}
+  .brand small{display:block;font:500 10px/1 Poppins,sans-serif;letter-spacing:.34em;color:var(--field);margin-top:6px}
+  .links{display:flex;gap:24px;font-size:15px;font-weight:500}
+  .links a{text-decoration:none}
+  .links a:hover{color:var(--field)}
 
-  .hero{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center;padding-top:36px;padding-bottom:64px}
-  .eyebrow{font-size:13px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--green)}
-  h1{font:700 clamp(36px,5.2vw,58px)/1.05 Fraunces,Georgia,serif;color:var(--navy);margin:12px 0 18px;letter-spacing:-.02em}
-  .lead{font-size:19px;color:var(--muted);max-width:30em;margin:0 0 28px}
+  /* Hero: Dutch sky above, polder fields below */
+  .hero{background:var(--sky)}
+  .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:end;padding-top:28px}
+  .hero-text{padding-bottom:88px}
+  h1{font-weight:650;font-size:clamp(38px,5.4vw,64px);line-height:1.04;letter-spacing:-.022em;max-width:11em}
+  .lead{font-size:19px;color:var(--muted);max-width:29em;margin:22px 0 30px}
   .btns{display:flex;gap:12px;flex-wrap:wrap}
-  .btn{display:inline-block;padding:13px 22px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none;transition:transform .15s,background .15s}
-  .btn:hover{transform:translateY(-1px)}
-  .btn-primary{background:var(--navy);color:var(--cream)}
-  .btn-primary:hover{background:#2B3A5C}
-  .btn-ghost{border:1.5px solid var(--navy);color:var(--navy)}
-  .hero-art{position:relative;height:440px}
-  .hero-art img{position:absolute;width:52%;border-radius:4px;box-shadow:0 18px 40px rgba(30,42,68,.22)}
-  .hero-art img:nth-child(1){left:0;top:40px;transform:rotate(-6deg)}
-  .hero-art img:nth-child(2){left:24%;top:0;z-index:2}
-  .hero-art img:nth-child(3){right:0;top:48px;transform:rotate(6deg)}
+  .btn{display:inline-block;padding:13px 22px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none;border:1.5px solid var(--ink)}
+  .btn-dark{background:var(--ink);color:var(--paper)}
+  .btn-dark:hover{background:#2B3A5C;border-color:#2B3A5C}
+  .btn-light{color:var(--ink)}
+  .btn-light:hover{background:#fff}
 
-  section{padding:64px 0}
-  .section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:32px;flex-wrap:wrap}
-  h2{font:700 clamp(28px,3.4vw,38px)/1.15 Fraunces,Georgia,serif;color:var(--navy);margin:6px 0 0;letter-spacing:-.01em}
-  .section-head p{margin:0;color:var(--muted);max-width:28em}
+  .sheet{position:relative;margin-bottom:-36px;z-index:2;background:#fff;padding:14px;border-radius:3px;
+         box-shadow:0 2px 0 #fff,0 26px 50px -18px rgba(30,42,68,.45);transform:rotate(1.4deg)}
+  .reveal{position:relative;aspect-ratio:760/973;overflow:hidden;--p:0%}
+  .reveal img{position:absolute;inset:0;width:100%;height:100%}
+  .reveal .color{clip-path:inset(0 calc(100% - var(--p)) 0 0)}
+  .reveal .edge{position:absolute;top:0;bottom:0;left:var(--p);width:0;pointer-events:none}
+  .reveal .edge::before{content:"";position:absolute;top:0;bottom:0;left:-1.5px;width:3px;background:var(--lamp)}
+  .reveal .edge::after{content:"";position:absolute;top:50%;left:-19px;width:38px;height:38px;margin-top:-19px;border-radius:50%;
+                       background:var(--lamp) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231E2A44' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 6l-6 6 6 6M15 6l6 6-6 6'/%3E%3C/svg%3E") center/20px no-repeat;
+                       box-shadow:0 4px 12px rgba(30,42,68,.3)}
+  .reveal input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize}
+  .reveal:has(input:focus-visible) .edge::after{outline:3px solid var(--ink);outline-offset:2px}
+  .sheet figcaption{font-size:13px;color:var(--muted);padding:10px 2px 0;display:flex;justify-content:space-between;gap:12px}
+  .sheet figcaption a{font-weight:600;color:var(--ink)}
 
-  .books{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:28px}
-  .book{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px 16px 20px;display:flex;flex-direction:column}
-  .book img{border-radius:4px;box-shadow:0 8px 20px rgba(30,42,68,.14);aspect-ratio:600/776;object-fit:cover}
-  .book h3{font:700 21px/1.2 Fraunces,Georgia,serif;color:var(--navy);margin:16px 0 4px}
-  .book .meta{font-size:13px;color:var(--green);font-weight:600;margin-bottom:8px}
-  .book p{font-size:14.5px;color:var(--muted);margin:0 0 16px;flex:1}
-  .book .btn{align-self:flex-start;padding:10px 18px;font-size:14px}
-  .book.special{border-color:#C7A24A}
-  .tag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:#B23A3A;color:#fff;padding:3px 8px;border-radius:999px;margin-left:6px;vertical-align:3px}
+  /* The polder: fields and ditches from the logo */
+  .polder{height:64px;background:linear-gradient(to bottom,
+      var(--field-light) 0 22%, var(--ditch) 22% 29%, var(--field) 29% 56%, var(--ditch) 56% 63%, #3F6638 63% 100%)}
 
-  .features{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-  .feature{border-top:3px solid var(--green);padding-top:14px}
-  .feature b{display:block;color:var(--navy);font-size:16px;margin-bottom:4px}
-  .feature span{font-size:14.5px;color:var(--muted)}
+  section{padding:88px 0 0}
+  .head{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:end;margin-bottom:40px}
+  h2{font-weight:650;font-size:clamp(30px,3.6vw,42px);line-height:1.1;letter-spacing:-.015em}
+  .head p{margin:0;color:var(--muted);max-width:30em}
 
-  .freegrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:900px;margin:0 auto}
-  @media(max-width:860px){.freegrid{grid-template-columns:repeat(2,1fr)}}
-  @media(max-width:520px){.freegrid{grid-template-columns:1fr}}
-  .freecard{background:#fff;border-radius:16px;padding:16px;box-shadow:0 8px 24px rgba(0,0,0,.08);display:flex;flex-direction:column;gap:8px;scroll-margin-top:90px}
-  .freecard img{width:100%;border:1px solid #e6e1d4;border-radius:6px}
-  .freecard h3{font-size:18px;margin:6px 0 0}
-  .freecard p{font-size:14px;margin:0;flex:1}
-  .freecard .btn{text-align:center}
-  .freecard .more{font-size:14px;text-align:center;color:var(--navy)}
-  .freecard:target{outline:3px solid #A9C99A}
-  .free{background:var(--navy);color:var(--cream);border-radius:22px;padding:44px;display:grid;grid-template-columns:260px 1fr;gap:44px;align-items:center}
-  .free img{background:#fff;border-radius:6px;padding:10px;box-shadow:0 16px 40px rgba(0,0,0,.3);transform:rotate(-3deg)}
-  .free h2{color:var(--cream)}
-  .free p{color:#C9CEDA;margin:12px 0 24px;max-width:34em}
-  .free .btn-primary{background:var(--cream);color:var(--navy)}
-  .free small{display:block;margin-top:14px;color:#9AA3B8;font-size:13px}
+  /* Books */
+  .specials{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:64px}
+  .special{display:grid;grid-template-columns:44% 1fr;gap:24px;align-items:center;padding:24px;border-radius:6px;background:var(--sky)}
+  .states{display:grid;grid-template-columns:repeat(auto-fill,minmax(196px,1fr));gap:48px 28px}
+  .book img{aspect-ratio:600/776;object-fit:cover;border-radius:2px;box-shadow:0 1px 2px rgba(30,42,68,.12),0 14px 26px -12px rgba(30,42,68,.4)}
+  .book h3{font-size:22px;line-height:1.2;font-weight:650;margin:18px 0 2px}
+  .special h3{margin-top:0;font-size:25px}
+  .book .meta{font-size:13.5px;font-weight:600;color:var(--band)}
+  .book p{font-size:15px;color:var(--muted);margin:8px 0 14px;line-height:1.55}
+  .amazon{font-size:15px;font-weight:600;text-decoration:none;border-bottom:2px solid var(--band);padding-bottom:1px}
+  .amazon:hover{color:var(--band)}
 
-  footer{padding:48px 0 40px;font-size:14px;color:var(--muted);border-top:1px solid var(--line);margin-top:64px}
-  footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
-  footer a{text-decoration:none;font-weight:500;color:var(--navy)}
-  footer .social{display:flex;gap:18px}
+  /* What's inside */
+  .inside{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin:0;padding:36px 0 0;border-top:1px solid var(--line)}
+  .inside dt{font:650 19px/1.25 Fraunces,Georgia,serif;font-variation-settings:"SOFT" 100;margin-bottom:6px}
+  .inside dd{margin:0;font-size:15px;color:var(--muted)}
 
-  @media (max-width:860px){
-    .hero{grid-template-columns:1fr;gap:28px;padding-top:12px}
-    .hero-art{height:300px;width:86%;max-width:420px;margin:0 auto}
-    .books{grid-template-columns:1fr 1fr;gap:14px}
-    .book{padding:10px 10px 14px}
-    .book h3{font-size:17px}
-    .book p{font-size:13.5px}
-    .book .btn{padding:9px 12px;font-size:13px}
-    .tag{display:none}
-    .features{grid-template-columns:1fr 1fr}
-    .free{grid-template-columns:1fr;padding:30px;gap:28px}
-    .free img{max-width:200px}
-    nav .links{display:none}
+  /* Free pages */
+  .freegrid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px 32px}
+  .freecard{display:flex;flex-direction:column;scroll-margin-top:24px}
+  .freecard img{border:1px solid var(--line);border-radius:3px;background:#fff}
+  .freecard h3{font-size:20px;font-weight:650;margin:16px 0 4px}
+  .freecard p{font-size:15px;color:var(--muted);margin:0 0 14px;flex:1}
+  .freecard .row{display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;font-size:14.5px}
+  .freecard .btn{padding:9px 18px;font-size:14px}
+  .freecard .more{font-weight:500;color:var(--muted)}
+  .freecard:target img{outline:4px solid var(--lamp);outline-offset:4px}
+  .note{font-size:14px;color:var(--muted);margin-top:36px}
+
+  footer{margin-top:96px}
+  footer .bar{background:var(--ink);color:#C9D0DD;font-size:14px;padding:32px 0 36px}
+  footer .bar .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+  footer a{color:#fff;text-decoration:none;font-weight:500}
+  footer .social{display:flex;gap:20px}
+
+  @media (max-width:900px){
+    .hero .wrap{grid-template-columns:1fr;gap:20px}
+    .hero-text{padding-bottom:12px}
+    .sheet{max-width:420px;width:92%;margin:0 auto -30px}
+    .head{grid-template-columns:1fr;gap:12px}
+    .specials{grid-template-columns:1fr}
+    .inside{grid-template-columns:1fr 1fr}
+    .freegrid{grid-template-columns:1fr 1fr}
+    .links a.social-link{display:none}
+  }
+  @media (max-width:560px){
+    .special{grid-template-columns:38% 1fr;gap:16px;padding:16px}
+    .special h3{font-size:21px}
+    .states{grid-template-columns:1fr 1fr;gap:36px 16px}
+    .book h3{font-size:18px}
+    .book p{font-size:14px}
+    .inside{grid-template-columns:1fr}
+    .freegrid{grid-template-columns:1fr}
+    .links{gap:16px;font-size:14px}
+    .brand b{font-size:21px}
   }
 </style>
 </head>
 <body>
-<header>
+<header class="top">
   <div class="wrap">
     <nav>
       <a class="brand" href="./"><img src="assets/logo-mark.svg" alt=""><span><b>Polder</b><small>INK PRESS</small></span></a>
-      <div class="links"><a href="#books">The books</a><a href="#free">Free pages</a><a href="https://www.pinterest.com/polderinkpress/">Pinterest</a><a href="https://www.instagram.com/polderinkpress/">Instagram</a></div>
+      <div class="links"><a href="#books">Books</a><a href="#free">Free pages</a><a class="social-link" href="https://www.pinterest.com/polderinkpress/">Pinterest</a><a class="social-link" href="https://www.instagram.com/polderinkpress/">Instagram</a></div>
     </nav>
   </div>
 </header>
 
 <main>
-  <div class="wrap hero">
-    <div>
-      <div class="eyebrow">Cozy States Coloring Books</div>
-      <h1>Slow down and color your way across America.</h1>
-      <p class="lead">Relaxing coloring books for adults, full of landmarks, small towns, local food and quiet, cozy moments. Bold, easy lines and one scene per page, so you can unwind in an evening.</p>
-      <div class="btns"><a class="btn btn-primary" href="#books">See the books</a><a class="btn btn-ghost" href="#free">Get free pages</a></div>
+  <div class="hero">
+    <div class="wrap">
+      <div class="hero-text">
+        <h1>Slow down and color your way across America.</h1>
+        <p class="lead">The Cozy States books are coloring books for adults, filled with real landmarks, small towns, local food and quiet moments. Each page has one scene drawn in bold, easy lines, so you can finish it in an evening.</p>
+        <div class="btns"><a class="btn btn-dark" href="#books">See the books</a><a class="btn btn-light" href="#free">Get free pages</a></div>
+      </div>
+      <figure class="sheet" style="margin-left:0;margin-right:0">
+        <div class="reveal" id="reveal">
+          <img src="assets/hero-vt-line.jpg" alt="Line drawing of a picnic by a red covered bridge in Vermont">
+          <img class="color" src="assets/hero-vt-color.jpg" alt="" aria-hidden="true">
+          <span class="edge" aria-hidden="true"></span>
+          <input type="range" min="0" max="100" value="0" step="1" aria-label="Color in the page: drag to compare the line drawing with the colored version">
+        </div>
+        <figcaption><span>Drag to color it in</span><a href="https://www.amazon.com/dp/B0HNHHZWDX">From Cozy Vermont</a></figcaption>
+      </figure>
     </div>
-    <div class="hero-art" aria-hidden="true">
-      <img src="assets/covers/cover-WB.jpg" alt="">
-      <img src="assets/covers/cover-XB.jpg" alt="">
-      <img src="assets/covers/cover-ME.jpg" alt="">
-    </div>
+    <div class="polder" aria-hidden="true"></div>
   </div>
 
   <section id="books">
     <div class="wrap">
-      <div class="section-head">
-        <div><div class="eyebrow">The series</div><h2>Nine cozy coloring books</h2></div>
-        <p>Every page shows a real place and is captioned with its name. All books are available as paperbacks on Amazon.</p>
+      <div class="head">
+        <h2>Nine cozy coloring books</h2>
+        <p>Every page shows a real place and is captioned with its name. All books are 8.5 x 11 inch paperbacks, available on Amazon.</p>
       </div>
-      <div class="books">
-        <article class="book special">
-          <img src="assets/covers/cover-XB.jpg" alt="Cover of Cozy Christmas Bears coloring book" loading="lazy">
-          <h3>Cozy Christmas Bears <span class="tag">Holiday</span></h3>
-          <div class="meta">50 detailed scenes · all 50 states</div>
-          <p>Two teddy bears on a holiday road trip across America, with one festive scene for every state.</p>
-          <a class="btn btn-primary" data-book="XB" href="https://www.amazon.com/dp/B0HNHCJZR9">View on Amazon</a>
-        </article>
-        <article class="book special">
+
+      <div class="specials">
+        <article class="book special" style="--band:#3A6E9E">
           <img src="assets/covers/cover-WB.jpg" alt="Cover of Cozy Winter Bears coloring book" loading="lazy">
-          <h3>Cozy Winter Bears <span class="tag">Winter</span></h3>
-          <div class="meta">50 detailed scenes · all 50 states</div>
-          <p>Two teddy bears on a snowy winter road trip across America, with one cozy winter scene for every state.</p>
-          <a class="btn btn-primary" data-book="WB" href="https://www.amazon.com/dp/B0HP7YYRQV">View on Amazon</a>
+          <div>
+            <h3>Cozy Winter Bears</h3>
+            <div class="meta">50 detailed scenes, one for every state</div>
+            <p>Two teddy bears on a snowy road trip across America: sledding, skating, snowshoeing and hot cocoa by the fire.</p>
+            <a class="amazon" data-book="WB" href="https://www.amazon.com/dp/B0HP7YYRQV">View on Amazon</a>
+          </div>
         </article>
-        <article class="book">
+        <article class="book special" style="--band:#B5333B">
+          <img src="assets/covers/cover-XB.jpg" alt="Cover of Cozy Christmas Bears coloring book" loading="lazy">
+          <div>
+            <h3>Cozy Christmas Bears</h3>
+            <div class="meta">50 detailed scenes, one for every state</div>
+            <p>Two teddy bears on a holiday road trip across America, with a festive scene in every state.</p>
+            <a class="amazon" data-book="XB" href="https://www.amazon.com/dp/B0HNHCJZR9">View on Amazon</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="states">
+        <article class="book" style="--band:#2A6A62">
           <img src="assets/covers/cover-ME.jpg" alt="Cover of Cozy Maine coloring book" loading="lazy">
           <h3>Cozy Maine</h3>
           <div class="meta">40 bold &amp; easy scenes</div>
           <p>Lighthouses, rocky shores, harbor towns and lobster rolls.</p>
-          <a class="btn btn-primary" data-book="ME" href="https://www.amazon.com/dp/B0HP7VG8DT">View on Amazon</a>
+          <a class="amazon" data-book="ME" href="https://www.amazon.com/dp/B0HP7VG8DT">View on Amazon</a>
         </article>
-        <article class="book">
+        <article class="book" style="--band:#8E2F3A">
           <img src="assets/covers/cover-VT.jpg" alt="Cover of Cozy Vermont coloring book" loading="lazy">
           <h3>Cozy Vermont</h3>
           <div class="meta">40 bold &amp; easy scenes</div>
-          <p>Covered bridges, village commons, maple sugaring and fall color.</p>
-          <a class="btn btn-primary" data-book="VT" href="https://www.amazon.com/dp/B0HNHHZWDX">View on Amazon</a>
+          <p>Covered bridges, village greens, maple sugaring and fall color.</p>
+          <a class="amazon" data-book="VT" href="https://www.amazon.com/dp/B0HNHHZWDX">View on Amazon</a>
         </article>
-        <article class="book">
+        <article class="book" style="--band:#1F6F8B">
           <img src="assets/covers/cover-HI.jpg" alt="Cover of Cozy Hawaii coloring book" loading="lazy">
           <h3>Cozy Hawaii</h3>
           <div class="meta">40 bold &amp; easy scenes</div>
           <p>Beaches, volcanoes, island towns and shave ice in the sun.</p>
-          <a class="btn btn-primary" data-book="HI" href="https://www.amazon.com/dp/B0HMPRHBPT">View on Amazon</a>
+          <a class="amazon" data-book="HI" href="https://www.amazon.com/dp/B0HMPRHBPT">View on Amazon</a>
         </article>
-        <article class="book">
+        <article class="book" style="--band:#24395A">
           <img src="assets/covers/cover-NY.jpg" alt="Cover of Cozy New York coloring book" loading="lazy">
           <h3>Cozy New York</h3>
           <div class="meta">40 bold &amp; easy scenes</div>
           <p>City streets, brownstones, bagels and autumn orchards upstate.</p>
-          <a class="btn btn-primary" data-book="NY" href="https://www.amazon.com/dp/B0HMPQ6885">View on Amazon</a>
+          <a class="amazon" data-book="NY" href="https://www.amazon.com/dp/B0HMPQ6885">View on Amazon</a>
         </article>
-        <article class="book">
+        <article class="book" style="--band:#B9532F">
           <img src="assets/covers/cover-TX.jpg" alt="Cover of Cozy Texas coloring book" loading="lazy">
           <h3>Cozy Texas</h3>
           <div class="meta">40 bold &amp; easy scenes</div>
-          <p>Hill Country, bluebonnets, BBQ and ranch life.</p>
-          <a class="btn btn-primary" data-book="TX" href="https://www.amazon.com/dp/B0HLZFLBX1">View on Amazon</a>
+          <p>Hill Country, bluebonnets, barbecue and ranch life.</p>
+          <a class="amazon" data-book="TX" href="https://www.amazon.com/dp/B0HLZFLBX1">View on Amazon</a>
         </article>
-        <article class="book">
+        <article class="book" style="--band:#2F5D6B">
           <img src="assets/covers/cover-OR.jpg" alt="Cover of Cozy Oregon coloring book" loading="lazy">
           <h3>Cozy Oregon</h3>
           <div class="meta">40 bold &amp; easy scenes</div>
           <p>Rocky coast, waterfalls, forest cabins and rainy-day cafes.</p>
-          <a class="btn btn-primary" data-book="OR" href="https://www.amazon.com/dp/B0HLY35MB3">View on Amazon</a>
+          <a class="amazon" data-book="OR" href="https://www.amazon.com/dp/B0HLY35MB3">View on Amazon</a>
         </article>
-        <article class="book">
+        <article class="book" style="--band:#3F6B4E">
           <img src="assets/covers/cover-CO.jpg" alt="Cover of Cozy Colorado coloring book" loading="lazy">
           <h3>Cozy Colorado</h3>
           <div class="meta">40 bold &amp; easy scenes</div>
           <p>Mountain lakes, ski towns, wildlife and campfires.</p>
-          <a class="btn btn-primary" data-book="CO" href="https://www.amazon.com/dp/B0HMP3WBZY">View on Amazon</a>
+          <a class="amazon" data-book="CO" href="https://www.amazon.com/dp/B0HMP3WBZY">View on Amazon</a>
         </article>
       </div>
     </div>
   </section>
 
   <section>
-    <div class="wrap features">
-      <div class="feature"><b>Single-sided pages</b><span>Blank backs, so markers don't bleed onto the next scene.</span></div>
-      <div class="feature"><b>Real places</b><span>Every page is captioned, with an overview of all places at the back.</span></div>
-      <div class="feature"><b>Bold &amp; easy lines</b><span>Relaxing to color with pencils or markers, no tiny details.</span></div>
-      <div class="feature"><b>8.5 x 11 inch</b><span>Large pages with room to blend and shade.</span></div>
+    <div class="wrap">
+      <dl class="inside">
+        <div><dt>Single-sided pages</dt><dd>Blank backs, so markers don't bleed onto the next scene.</dd></div>
+        <div><dt>Real places</dt><dd>Every page is captioned, with an overview of all places at the back.</dd></div>
+        <div><dt>Bold, easy lines</dt><dd>Relaxing with pencils or markers. The bear books have a little more detail.</dd></div>
+        <div><dt>Large pages</dt><dd>8.5 x 11 inch, with room to blend and shade.</dd></div>
+      </dl>
     </div>
   </section>
 
   <section id="free">
     <div class="wrap">
-      <div class="section-head">
-        <div><div class="eyebrow">Free printables</div><h2>Free coloring pages for adults</h2></div>
-        <p>One free page from every book. Print on letter or A4 paper, grab your pencils and enjoy a slow, cozy evening. Free for personal use; please don't resell or redistribute.</p>
+      <div class="head">
+        <h2>Free coloring pages</h2>
+        <p>One free page from every book. Print it on letter or A4 paper, grab your pencils and enjoy a slow evening.</p>
       </div>
       <div class="freegrid">
         <article class="freecard" id="free-xb">
           <img src="free/christmas-bears-vermont-preview.png" alt="Free coloring page: Christmas sleigh ride" loading="lazy">
           <h3>Christmas sleigh ride</h3>
           <p>Two teddy bears on a horse-drawn sleigh past a snowy village church.</p>
-          <a class="btn btn-primary" href="free/christmas-bears-vermont.pdf" download>Download the PDF</a>
-          <a class="more" href="https://www.amazon.com/dp/B0HNHCJZR9">From Cozy Christmas Bears &rarr;</a>
+          <div class="row"><a class="btn btn-dark" href="free/christmas-bears-vermont.pdf" download>Download PDF</a><a class="more" href="https://www.amazon.com/dp/B0HNHCJZR9">From Cozy Christmas Bears</a></div>
         </article>
         <article class="freecard" id="free-wb">
           <img src="free/winter-bears-minnesota-preview.png" alt="Free coloring page: Snowshoeing by the lighthouse" loading="lazy">
           <h3>Snowshoeing by the lighthouse</h3>
           <p>Two teddy bears on snowshoes along a frozen lakeshore.</p>
-          <a class="btn btn-primary" href="free/winter-bears-minnesota.pdf" download>Download the PDF</a>
-          <a class="more" href="https://www.amazon.com/dp/B0HP7YYRQV">From Cozy Winter Bears &rarr;</a>
+          <div class="row"><a class="btn btn-dark" href="free/winter-bears-minnesota.pdf" download>Download PDF</a><a class="more" href="https://www.amazon.com/dp/B0HP7YYRQV">From Cozy Winter Bears</a></div>
         </article>
         <article class="freecard" id="free-vt">
           <img src="free/vermont-covered-bridge-preview.png" alt="Free coloring page: Covered bridge picnic" loading="lazy">
           <h3>Covered bridge picnic</h3>
           <p>An autumn picnic by a covered bridge and a village church.</p>
-          <a class="btn btn-primary" href="free/vermont-covered-bridge.pdf" download>Download the PDF</a>
-          <a class="more" href="https://www.amazon.com/dp/B0HNHHZWDX">From Cozy Vermont &rarr;</a>
+          <div class="row"><a class="btn btn-dark" href="free/vermont-covered-bridge.pdf" download>Download PDF</a><a class="more" href="https://www.amazon.com/dp/B0HNHHZWDX">From Cozy Vermont</a></div>
         </article>
         <article class="freecard" id="free-ny">
           <img src="free/new-york-cider-donuts-preview.png" alt="Free coloring page: Cider donuts at the orchard" loading="lazy">
           <h3>Cider donuts at the orchard</h3>
           <p>Warm donuts and cider at a farm stand upstate.</p>
-          <a class="btn btn-primary" href="free/new-york-cider-donuts.pdf" download>Download the PDF</a>
-          <a class="more" href="https://www.amazon.com/dp/B0HMPQ6885">From Cozy New York &rarr;</a>
+          <div class="row"><a class="btn btn-dark" href="free/new-york-cider-donuts.pdf" download>Download PDF</a><a class="more" href="https://www.amazon.com/dp/B0HMPQ6885">From Cozy New York</a></div>
         </article>
         <article class="freecard" id="free-tx">
           <img src="free/texas-pumpkin-patch-preview.png" alt="Free coloring page: Pumpkin patch" loading="lazy">
           <h3>Pumpkin patch</h3>
           <p>Hay bales, a wagon and pumpkins on a fall afternoon.</p>
-          <a class="btn btn-primary" href="free/texas-pumpkin-patch.pdf" download>Download the PDF</a>
-          <a class="more" href="https://www.amazon.com/dp/B0HLZFLBX1">From Cozy Texas &rarr;</a>
+          <div class="row"><a class="btn btn-dark" href="free/texas-pumpkin-patch.pdf" download>Download PDF</a><a class="more" href="https://www.amazon.com/dp/B0HLZFLBX1">From Cozy Texas</a></div>
         </article>
         <article class="freecard" id="free-me">
           <img src="free/maine-painting-buoys-preview.png" alt="Free coloring page: Painting buoys" loading="lazy">
           <h3>Painting buoys</h3>
           <p>Painting lobster buoys by a fishing shack on the harbor.</p>
-          <a class="btn btn-primary" href="free/maine-painting-buoys.pdf" download>Download the PDF</a>
-          <a class="more" href="https://www.amazon.com/dp/B0HP7VG8DT">From Cozy Maine &rarr;</a>
+          <div class="row"><a class="btn btn-dark" href="free/maine-painting-buoys.pdf" download>Download PDF</a><a class="more" href="https://www.amazon.com/dp/B0HP7VG8DT">From Cozy Maine</a></div>
         </article>
         <article class="freecard" id="free-or">
           <img src="free/oregon-bookstore-preview.png" alt="Free coloring page: A rainy day in the bookstore" loading="lazy">
           <h3>A rainy day in the bookstore</h3>
           <p>A comfy chair, tall shelves and a cat on a stack of books.</p>
-          <a class="btn btn-primary" href="free/oregon-bookstore.pdf" download>Download the PDF</a>
-          <a class="more" href="https://www.amazon.com/dp/B0HLY35MB3">From Cozy Oregon &rarr;</a>
+          <div class="row"><a class="btn btn-dark" href="free/oregon-bookstore.pdf" download>Download PDF</a><a class="more" href="https://www.amazon.com/dp/B0HLY35MB3">From Cozy Oregon</a></div>
         </article>
         <article class="freecard" id="free-co">
           <img src="free/colorado-campfire-preview.png" alt="Free coloring page: Campfire under the stars" loading="lazy">
           <h3>Campfire under the stars</h3>
           <p>Marshmallows, a guitar and a tent among the pines.</p>
-          <a class="btn btn-primary" href="free/colorado-campfire.pdf" download>Download the PDF</a>
-          <a class="more" href="https://www.amazon.com/dp/B0HMP3WBZY">From Cozy Colorado &rarr;</a>
+          <div class="row"><a class="btn btn-dark" href="free/colorado-campfire.pdf" download>Download PDF</a><a class="more" href="https://www.amazon.com/dp/B0HMP3WBZY">From Cozy Colorado</a></div>
         </article>
         <article class="freecard" id="free-hi">
           <img src="free/hawaii-sunset-picnic-preview.png" alt="Free coloring page: Sunset beach picnic" loading="lazy">
           <h3>Sunset beach picnic</h3>
           <p>A picnic on the sand under the palms as the sun goes down.</p>
-          <a class="btn btn-primary" href="free/hawaii-sunset-picnic.pdf" download>Download the PDF</a>
-          <a class="more" href="https://www.amazon.com/dp/B0HMPRHBPT">From Cozy Hawaii &rarr;</a>
+          <div class="row"><a class="btn btn-dark" href="free/hawaii-sunset-picnic.pdf" download>Download PDF</a><a class="more" href="https://www.amazon.com/dp/B0HMPRHBPT">From Cozy Hawaii</a></div>
         </article>
       </div>
+      <p class="note">Free for personal use. Please don't resell or redistribute the pages.</p>
     </div>
   </section>
 </main>
 
 <footer>
-  <div class="wrap">
-    <div>© 2026 Polder Ink Press · Cozy States Coloring Books</div>
-    <div class="social"><a href="https://www.pinterest.com/polderinkpress/">Pinterest</a><a href="https://www.instagram.com/polderinkpress/">Instagram</a></div>
+  <div class="polder" aria-hidden="true"></div>
+  <div class="bar">
+    <div class="wrap">
+      <div>© 2026 Polder Ink Press. Cozy States Coloring Books.</div>
+      <div class="social"><a href="https://www.pinterest.com/polderinkpress/">Pinterest</a><a href="https://www.instagram.com/polderinkpress/">Instagram</a></div>
+    </div>
   </div>
 </footer>
+
+<script>
+(function(){
+  var box=document.getElementById('reveal'), input=box.querySelector('input'), touched=false;
+  function set(v){box.style.setProperty('--p',v+'%');input.value=v}
+  input.addEventListener('input',function(){touched=true;set(input.value)});
+  var target=58;
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){set(target);return}
+  // One load moment: the page colors itself in, then waits for the visitor.
+  var start=null, dur=1800;
+  function step(t){
+    if(touched)return;
+    if(start===null)start=t;
+    var k=Math.min((t-start)/dur,1), e=1-Math.pow(1-k,3);
+    set(Math.round(e*target*10)/10);
+    if(k<1)requestAnimationFrame(step);
+  }
+  var color=box.querySelector('.color');
+  function go(){setTimeout(function(){requestAnimationFrame(step)},400)}
+  if(color.complete)go();else color.addEventListener('load',go);
+})();
+</script>
 </body>
 </html>
