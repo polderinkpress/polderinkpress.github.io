@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Amazon Ads authorization – Polder Ink Press</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,500..700,100&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#1E2A44;--field:#4E7A45;--field-light:#6E9A5C;--ditch:#9CC3DA;--sky:#E8F0F2;--lamp:#E9B44C;--muted:#566074;--paper:#FFFDF9;--line:#E3E0D8}
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;display:flex;flex-direction:column;background:var(--paper);color:var(--ink);font:400 17px/1.65 Poppins,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  main{flex:1;padding:56px 20px}
+  .box{max-width:42em;margin:0 auto}
+  h1{font:650 clamp(30px,5vw,42px)/1.1 Fraunces,Georgia,serif;font-variation-settings:"SOFT" 100;margin:0 0 10px;letter-spacing:-.015em}
+  h2{font:600 22px/1.25 Fraunces,Georgia,serif;font-variation-settings:"SOFT" 100;margin:34px 0 8px}
+  p,li{color:var(--muted)} .date{font-size:14px;margin:0 0 28px}
+  a{color:var(--field)} a:focus-visible,button:focus-visible{outline:3px solid var(--lamp);outline-offset:3px}
+  code{display:block;word-break:break-all;background:var(--sky);border:1px solid var(--line);border-radius:10px;padding:14px 16px;font-size:15px;color:var(--ink);margin:0 0 16px}
+  button{padding:12px 22px;border-radius:999px;font:600 15px Poppins,system-ui,sans-serif;border:1.5px solid var(--ink);background:var(--ink);color:#FFFDF9;cursor:pointer}
+  .polder{height:64px;background:linear-gradient(to bottom,var(--field-light) 0 22%,var(--ditch) 22% 29%,var(--field) 29% 56%,var(--ditch) 56% 63%,#3F6638 63% 100%)}
+</style>
+</head>
+<body>
+<main><div class="box">
+<h1>Amazon Ads authorization</h1>
+<p id="msg">This page receives the one-time authorization code after signing in with Amazon. It is only used by Polder Ink Press for its own reporting tool.</p>
+<div id="out" hidden>
+  <p>Authorization code (valid for about 5 minutes, single use):</p>
+  <code id="code"></code>
+  <button id="copy" type="button">Copy code</button>
+</div>
+<p id="err" hidden></p>
+</div></main>
+<script>
+(function(){
+  var q = new URLSearchParams(location.search), c = q.get('code'), e = q.get('error');
+  if (c) {
+    document.getElementById('code').textContent = c;
+    document.getElementById('out').hidden = false;
+    document.getElementById('copy').onclick = function(){
+      try { navigator.clipboard.writeText(c); this.textContent = 'Copied'; } catch (x) {}
+    };
+    history.replaceState(null, '', location.pathname);
+  } else if (e) {
+    var el = document.getElementById('err'); el.hidden = false;
+    el.textContent = 'Amazon returned an error: ' + e + ' ' + (q.get('error_description') || '');
+  }
+})();
+</script>
+<div class="polder" aria-hidden="true"></div>
+</body>
+</html>
