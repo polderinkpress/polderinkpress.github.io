@@ -421,6 +421,14 @@
   .freecard .row{display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;font-size:14.5px}
   .freecard .btn{padding:9px 18px;font-size:14px}
   .freecard .more{font-weight:500;color:var(--muted)}
+  /* free pages (8 nov 2026) */
+  .freecard .pic{display:block} .freecard h3 a{text-decoration:none} .freecard h3 a:hover{color:var(--field)}
+  .freecard .txt{display:flex;flex-direction:column;flex:1}
+  .potm{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:32px;align-items:center;background:var(--sky);border-radius:6px;padding:24px;margin-bottom:44px;scroll-margin-top:24px}
+  .potm h3{font-size:26px} .potm-label{font-size:13px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--field)}
+  .potm:target img{outline:4px solid var(--lamp);outline-offset:4px}
+  .freesub{font:650 22px/1.2 Fraunces,Georgia,serif;font-variation-settings:"SOFT" 100;margin:44px 0 18px}
+  @media (max-width:640px){.potm{grid-template-columns:1fr;padding:18px}}
   .freecard:target img{outline:4px solid var(--lamp);outline-offset:4px}
   .note{font-size:14px;color:var(--muted);margin-top:36px}
 
@@ -651,74 +659,80 @@
         <h2>Free coloring pages</h2>
         <p>Free pages from our books. Print them on letter or A4 paper, grab your pencils and enjoy a slow evening.</p>
       </div>
+      <!-- free:start (gegenereerd door scripts/free_pages.py uit free-rotatie.json) -->
+        <article class="freecard potm" id="free-ny">
+          <a class="pic" href="free/new-york-cider-donuts/"><picture><source type="image/webp" srcset="free/new-york-cider-donuts-preview.webp"><img src="free/new-york-cider-donuts-preview.png" alt="Free coloring page: Cider donuts at the orchard" width="765" height="990" loading="lazy"></picture></a>
+          <div class="txt"><span class="potm-label">Page of the month · November</span><h3><a href="free/new-york-cider-donuts/">Cider donuts at the orchard</a></h3>
+          <p>Warm donuts and cider at a farm stand upstate.</p>
+          <div class="row"><a class="btn btn-dark" href="free/new-york-cider-donuts.pdf" download>Download PDF</a><a class="more" href="https://www.amazon.com/dp/B0HMPQ6885?maas=maas_adg_172B6CE772AA095FA9D14A87D53460D0_afap_abs&amp;ref_=aa_maas&amp;tag=maas">From Cozy New York</a></div></div>
+        </article>
+      <h3 class="freesub">This season</h3>
       <div class="freegrid">
         <article class="freecard" id="free-xb">
-          <picture><source type="image/webp" srcset="free/christmas-bears-vermont-preview.webp"><img src="free/christmas-bears-vermont-preview.png" alt="Free coloring page: Christmas sleigh ride" width="765" height="990" loading="lazy"></picture>
-          <h3>Christmas sleigh ride</h3>
+          <a class="pic" href="free/christmas-bears-vermont/"><picture><source type="image/webp" srcset="free/christmas-bears-vermont-preview.webp"><img src="free/christmas-bears-vermont-preview.png" alt="Free coloring page: Christmas sleigh ride" width="765" height="990" loading="lazy"></picture></a>
+          <div class="txt"><h3><a href="free/christmas-bears-vermont/">Christmas sleigh ride</a></h3>
           <p>Two teddy bears on a horse-drawn sleigh past a snowy village church.</p>
-          <div class="row"><a class="btn btn-dark" href="free/christmas-bears-vermont.pdf" download>Download PDF</a><a class="more" href="https://www.amazon.com/dp/B0HNHCJZR9?maas=maas_adg_17D812EAD5D2C87C03FBE6273232C419_afap_abs&amp;ref_=aa_maas&amp;tag=maas">From Cozy Christmas Bears</a></div>
+          <div class="row"><a class="btn btn-dark" href="free/christmas-bears-vermont.pdf" download>Download PDF</a><a class="more" href="https://www.amazon.com/dp/B0HNHCJZR9?maas=maas_adg_17D812EAD5D2C87C03FBE6273232C419_afap_abs&amp;ref_=aa_maas&amp;tag=maas">From Cozy Christmas Bears</a></div></div>
         </article>
         <article class="freecard" id="free-wb">
-          <picture><source type="image/webp" srcset="free/winter-bears-minnesota-preview.webp"><img src="free/winter-bears-minnesota-preview.png" alt="Free coloring page: Snowshoeing by the lighthouse" width="765" height="990" loading="lazy"></picture>
-          <h3>Snowshoeing by the lighthouse</h3>
+          <a class="pic" href="free/winter-bears-minnesota/"><picture><source type="image/webp" srcset="free/winter-bears-minnesota-preview.webp"><img src="free/winter-bears-minnesota-preview.png" alt="Free coloring page: Snowshoeing by the lighthouse" width="765" height="990" loading="lazy"></picture></a>
+          <div class="txt"><h3><a href="free/winter-bears-minnesota/">Snowshoeing by the lighthouse</a></h3>
           <p>Two teddy bears on snowshoes along a frozen lakeshore.</p>
-          <div class="row"><a class="btn btn-dark" href="free/winter-bears-minnesota.pdf" download>Download PDF</a><a class="more" href="https://www.amazon.com/dp/B0HP7YYRQV?maas=maas_adg_28CF0BD05E5CE738EB25584F2FBDE3DE_afap_abs&amp;ref_=aa_maas&amp;tag=maas">From Cozy Winter Bears</a></div>
+          <div class="row"><a class="btn btn-dark" href="free/winter-bears-minnesota.pdf" download>Download PDF</a><a class="more" href="https://www.amazon.com/dp/B0HP7YYRQV?maas=maas_adg_28CF0BD05E5CE738EB25584F2FBDE3DE_afap_abs&amp;ref_=aa_maas&amp;tag=maas">From Cozy Winter Bears</a></div></div>
         </article>
         <article class="freecard" id="free-mi">
-          <picture><source type="image/webp" srcset="free/michigan-christmas-cabin-preview.webp"><img src="free/michigan-christmas-cabin-preview.png" alt="Free coloring page: Christmas in a log cabin" width="765" height="990" loading="lazy"></picture>
-          <h3>Christmas in a log cabin</h3>
+          <a class="pic" href="free/michigan-christmas-cabin/"><picture><source type="image/webp" srcset="free/michigan-christmas-cabin-preview.webp"><img src="free/michigan-christmas-cabin-preview.png" alt="Free coloring page: Christmas in a log cabin" width="765" height="990" loading="lazy"></picture></a>
+          <div class="txt"><h3><a href="free/michigan-christmas-cabin/">Christmas in a log cabin</a></h3>
           <p>A warm blanket, a wood stove and presents under the tree.</p>
-          <div class="row"><a class="btn btn-dark" href="free/michigan-christmas-cabin.pdf" download>Download PDF</a><a class="more" href="https://www.amazon.com/dp/B0HQ6JZ7DP?maas=maas_adg_D4FC5A651B996C8948F6C560080B6C51_afap_abs&amp;ref_=aa_maas&amp;tag=maas">From Cozy Michigan</a></div>
-        </article>
-        <article class="freecard" id="free-nc">
-          <picture><source type="image/webp" srcset="free/north-carolina-old-time-music-preview.webp"><img src="free/north-carolina-old-time-music-preview.png" alt="Free coloring page: Music on the porch" width="765" height="990" loading="lazy"></picture>
-          <h3>Music on the porch</h3>
-          <p>A banjo and a fiddle on a farmhouse porch in the mountains.</p>
-          <div class="row"><a class="btn btn-dark" href="free/north-carolina-old-time-music.pdf" download>Download PDF</a><a class="more" href="https://www.amazon.com/dp/B0HQ4HPFKD?maas=maas_adg_8BBBEA20F8BEDEDF1AF59B7767DFE53F_afap_abs&amp;ref_=aa_maas&amp;tag=maas">From Cozy North Carolina</a></div>
-        </article>
-        <article class="freecard" id="free-vt">
-          <picture><source type="image/webp" srcset="free/vermont-covered-bridge-preview.webp"><img src="free/vermont-covered-bridge-preview.png" alt="Free coloring page: Covered bridge picnic" width="765" height="990" loading="lazy"></picture>
-          <h3>Covered bridge picnic</h3>
-          <p>An autumn picnic by a covered bridge and a village church.</p>
-          <div class="row"><a class="btn btn-dark" href="free/vermont-covered-bridge.pdf" download>Download PDF</a><a class="more" href="https://www.amazon.com/dp/B0HNHHZWDX?maas=maas_adg_DD755CCE5F088420ED03B695DC61C984_afap_abs&amp;ref_=aa_maas&amp;tag=maas">From Cozy Vermont</a></div>
-        </article>
-        <article class="freecard" id="free-ny">
-          <picture><source type="image/webp" srcset="free/new-york-cider-donuts-preview.webp"><img src="free/new-york-cider-donuts-preview.png" alt="Free coloring page: Cider donuts at the orchard" width="765" height="990" loading="lazy"></picture>
-          <h3>Cider donuts at the orchard</h3>
-          <p>Warm donuts and cider at a farm stand upstate.</p>
-          <div class="row"><a class="btn btn-dark" href="free/new-york-cider-donuts.pdf" download>Download PDF</a><a class="more" href="https://www.amazon.com/dp/B0HMPQ6885?maas=maas_adg_172B6CE772AA095FA9D14A87D53460D0_afap_abs&amp;ref_=aa_maas&amp;tag=maas">From Cozy New York</a></div>
-        </article>
-        <article class="freecard" id="free-tx">
-          <picture><source type="image/webp" srcset="free/texas-pumpkin-patch-preview.webp"><img src="free/texas-pumpkin-patch-preview.png" alt="Free coloring page: Pumpkin patch" width="765" height="990" loading="lazy"></picture>
-          <h3>Pumpkin patch</h3>
-          <p>Hay bales, a wagon and pumpkins on a fall afternoon.</p>
-          <div class="row"><a class="btn btn-dark" href="free/texas-pumpkin-patch.pdf" download>Download PDF</a><a class="more" href="https://www.amazon.com/dp/B0HLZFLBX1?maas=maas_adg_B80FA2367CEC5E4E8058C88E7948C2AC_afap_abs&amp;ref_=aa_maas&amp;tag=maas">From Cozy Texas</a></div>
-        </article>
-        <article class="freecard" id="free-me">
-          <picture><source type="image/webp" srcset="free/maine-painting-buoys-preview.webp"><img src="free/maine-painting-buoys-preview.png" alt="Free coloring page: Painting buoys" width="765" height="990" loading="lazy"></picture>
-          <h3>Painting buoys</h3>
-          <p>Painting lobster buoys by a fishing shack on the harbor.</p>
-          <div class="row"><a class="btn btn-dark" href="free/maine-painting-buoys.pdf" download>Download PDF</a><a class="more" href="https://www.amazon.com/dp/B0HP7VG8DT?maas=maas_adg_34E62358B699B0349483C62EC1F60D36_afap_abs&amp;ref_=aa_maas&amp;tag=maas">From Cozy Maine</a></div>
-        </article>
-        <article class="freecard" id="free-or">
-          <picture><source type="image/webp" srcset="free/oregon-bookstore-preview.webp"><img src="free/oregon-bookstore-preview.png" alt="Free coloring page: A rainy day in the bookstore" width="765" height="990" loading="lazy"></picture>
-          <h3>A rainy day in the bookstore</h3>
-          <p>A comfy chair, tall shelves and a cat on a stack of books.</p>
-          <div class="row"><a class="btn btn-dark" href="free/oregon-bookstore.pdf" download>Download PDF</a><a class="more" href="https://www.amazon.com/dp/B0HLY35MB3?maas=maas_adg_1F89D72790E7A99E607F9D115E77DC25_afap_abs&amp;ref_=aa_maas&amp;tag=maas">From Cozy Oregon</a></div>
-        </article>
-        <article class="freecard" id="free-co">
-          <picture><source type="image/webp" srcset="free/colorado-campfire-preview.webp"><img src="free/colorado-campfire-preview.png" alt="Free coloring page: Campfire under the stars" width="765" height="990" loading="lazy"></picture>
-          <h3>Campfire under the stars</h3>
-          <p>Marshmallows, a guitar and a tent among the pines.</p>
-          <div class="row"><a class="btn btn-dark" href="free/colorado-campfire.pdf" download>Download PDF</a><a class="more" href="https://www.amazon.com/dp/B0HMP3WBZY?maas=maas_adg_7C69CC619DDD4E0ADAEF18E6EF0B006B_afap_abs&amp;ref_=aa_maas&amp;tag=maas">From Cozy Colorado</a></div>
-        </article>
-        <article class="freecard" id="free-hi">
-          <picture><source type="image/webp" srcset="free/hawaii-sunset-picnic-preview.webp"><img src="free/hawaii-sunset-picnic-preview.png" alt="Free coloring page: Sunset beach picnic" width="765" height="990" loading="lazy"></picture>
-          <h3>Sunset beach picnic</h3>
-          <p>A picnic on the sand under the palms as the sun goes down.</p>
-          <div class="row"><a class="btn btn-dark" href="free/hawaii-sunset-picnic.pdf" download>Download PDF</a><a class="more" href="https://www.amazon.com/dp/B0HMPRHBPT?maas=maas_adg_BD86F4B4A2EB781BA061A9988198CC47_afap_abs&amp;ref_=aa_maas&amp;tag=maas">From Cozy Hawaii</a></div>
+          <div class="row"><a class="btn btn-dark" href="free/michigan-christmas-cabin.pdf" download>Download PDF</a><a class="more" href="https://www.amazon.com/dp/B0HQ6JZ7DP?maas=maas_adg_D4FC5A651B996C8948F6C560080B6C51_afap_abs&amp;ref_=aa_maas&amp;tag=maas">From Cozy Michigan</a></div></div>
         </article>
       </div>
+      <h3 class="freesub">More free pages</h3>
+      <div class="freegrid">
+        <article class="freecard" id="free-nc">
+          <a class="pic" href="free/north-carolina-old-time-music/"><picture><source type="image/webp" srcset="free/north-carolina-old-time-music-preview.webp"><img src="free/north-carolina-old-time-music-preview.png" alt="Free coloring page: Music on the porch" width="765" height="990" loading="lazy"></picture></a>
+          <div class="txt"><h3><a href="free/north-carolina-old-time-music/">Music on the porch</a></h3>
+          <p>A banjo and a fiddle on a farmhouse porch in the mountains.</p>
+          <div class="row"><a class="btn btn-dark" href="free/north-carolina-old-time-music.pdf" download>Download PDF</a><a class="more" href="https://www.amazon.com/dp/B0HQ4HPFKD?maas=maas_adg_8BBBEA20F8BEDEDF1AF59B7767DFE53F_afap_abs&amp;ref_=aa_maas&amp;tag=maas">From Cozy North Carolina</a></div></div>
+        </article>
+        <article class="freecard" id="free-vt">
+          <a class="pic" href="free/vermont-covered-bridge/"><picture><source type="image/webp" srcset="free/vermont-covered-bridge-preview.webp"><img src="free/vermont-covered-bridge-preview.png" alt="Free coloring page: Covered bridge picnic" width="765" height="990" loading="lazy"></picture></a>
+          <div class="txt"><h3><a href="free/vermont-covered-bridge/">Covered bridge picnic</a></h3>
+          <p>An autumn picnic by a covered bridge and a village church.</p>
+          <div class="row"><a class="btn btn-dark" href="free/vermont-covered-bridge.pdf" download>Download PDF</a><a class="more" href="https://www.amazon.com/dp/B0HNHHZWDX?maas=maas_adg_DD755CCE5F088420ED03B695DC61C984_afap_abs&amp;ref_=aa_maas&amp;tag=maas">From Cozy Vermont</a></div></div>
+        </article>
+        <article class="freecard" id="free-tx">
+          <a class="pic" href="free/texas-pumpkin-patch/"><picture><source type="image/webp" srcset="free/texas-pumpkin-patch-preview.webp"><img src="free/texas-pumpkin-patch-preview.png" alt="Free coloring page: Pumpkin patch" width="765" height="990" loading="lazy"></picture></a>
+          <div class="txt"><h3><a href="free/texas-pumpkin-patch/">Pumpkin patch</a></h3>
+          <p>Hay bales, a wagon and pumpkins on a fall afternoon.</p>
+          <div class="row"><a class="btn btn-dark" href="free/texas-pumpkin-patch.pdf" download>Download PDF</a><a class="more" href="https://www.amazon.com/dp/B0HLZFLBX1?maas=maas_adg_B80FA2367CEC5E4E8058C88E7948C2AC_afap_abs&amp;ref_=aa_maas&amp;tag=maas">From Cozy Texas</a></div></div>
+        </article>
+        <article class="freecard" id="free-me">
+          <a class="pic" href="free/maine-painting-buoys/"><picture><source type="image/webp" srcset="free/maine-painting-buoys-preview.webp"><img src="free/maine-painting-buoys-preview.png" alt="Free coloring page: Painting buoys" width="765" height="990" loading="lazy"></picture></a>
+          <div class="txt"><h3><a href="free/maine-painting-buoys/">Painting buoys</a></h3>
+          <p>Painting lobster buoys by a fishing shack on the harbor.</p>
+          <div class="row"><a class="btn btn-dark" href="free/maine-painting-buoys.pdf" download>Download PDF</a><a class="more" href="https://www.amazon.com/dp/B0HP7VG8DT?maas=maas_adg_34E62358B699B0349483C62EC1F60D36_afap_abs&amp;ref_=aa_maas&amp;tag=maas">From Cozy Maine</a></div></div>
+        </article>
+        <article class="freecard" id="free-or">
+          <a class="pic" href="free/oregon-bookstore/"><picture><source type="image/webp" srcset="free/oregon-bookstore-preview.webp"><img src="free/oregon-bookstore-preview.png" alt="Free coloring page: A rainy day in the bookstore" width="765" height="990" loading="lazy"></picture></a>
+          <div class="txt"><h3><a href="free/oregon-bookstore/">A rainy day in the bookstore</a></h3>
+          <p>A comfy chair, tall shelves and a cat on a stack of books.</p>
+          <div class="row"><a class="btn btn-dark" href="free/oregon-bookstore.pdf" download>Download PDF</a><a class="more" href="https://www.amazon.com/dp/B0HLY35MB3?maas=maas_adg_1F89D72790E7A99E607F9D115E77DC25_afap_abs&amp;ref_=aa_maas&amp;tag=maas">From Cozy Oregon</a></div></div>
+        </article>
+        <article class="freecard" id="free-co">
+          <a class="pic" href="free/colorado-campfire/"><picture><source type="image/webp" srcset="free/colorado-campfire-preview.webp"><img src="free/colorado-campfire-preview.png" alt="Free coloring page: Campfire under the stars" width="765" height="990" loading="lazy"></picture></a>
+          <div class="txt"><h3><a href="free/colorado-campfire/">Campfire under the stars</a></h3>
+          <p>Marshmallows, a guitar and a tent among the pines.</p>
+          <div class="row"><a class="btn btn-dark" href="free/colorado-campfire.pdf" download>Download PDF</a><a class="more" href="https://www.amazon.com/dp/B0HMP3WBZY?maas=maas_adg_7C69CC619DDD4E0ADAEF18E6EF0B006B_afap_abs&amp;ref_=aa_maas&amp;tag=maas">From Cozy Colorado</a></div></div>
+        </article>
+        <article class="freecard" id="free-hi">
+          <a class="pic" href="free/hawaii-sunset-picnic/"><picture><source type="image/webp" srcset="free/hawaii-sunset-picnic-preview.webp"><img src="free/hawaii-sunset-picnic-preview.png" alt="Free coloring page: Sunset beach picnic" width="765" height="990" loading="lazy"></picture></a>
+          <div class="txt"><h3><a href="free/hawaii-sunset-picnic/">Sunset beach picnic</a></h3>
+          <p>A picnic on the sand under the palms as the sun goes down.</p>
+          <div class="row"><a class="btn btn-dark" href="free/hawaii-sunset-picnic.pdf" download>Download PDF</a><a class="more" href="https://www.amazon.com/dp/B0HMPRHBPT?maas=maas_adg_BD86F4B4A2EB781BA061A9988198CC47_afap_abs&amp;ref_=aa_maas&amp;tag=maas">From Cozy Hawaii</a></div></div>
+        </article>
+      </div>
+      <!-- free:end -->
       <p class="note">Free for personal use. Please don't resell or redistribute the pages.</p>
     </div>
   </section>
