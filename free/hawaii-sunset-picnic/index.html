@@ -125,6 +125,14 @@
   .freecard .row{display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;font-size:14.5px}
   .freecard .btn{padding:9px 18px;font-size:14px}
   .freecard .more{font-weight:500;color:var(--muted)}
+  /* free pages (8 nov 2026) */
+  .freecard .pic{display:block} .freecard h3 a{text-decoration:none} .freecard h3 a:hover{color:var(--field)}
+  .freecard .txt{display:flex;flex-direction:column;flex:1}
+  .potm{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:32px;align-items:center;background:var(--sky);border-radius:6px;padding:24px;margin-bottom:44px;scroll-margin-top:24px}
+  .potm h3{font-size:26px} .potm-label{font-size:13px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--field)}
+  .potm:target img{outline:4px solid var(--lamp);outline-offset:4px}
+  .freesub{font:650 22px/1.2 Fraunces,Georgia,serif;font-variation-settings:"SOFT" 100;margin:44px 0 18px}
+  @media (max-width:640px){.potm{grid-template-columns:1fr;padding:18px}}
   .freecard:target img{outline:4px solid var(--lamp);outline-offset:4px}
   .note{font-size:14px;color:var(--muted);margin-top:36px}
 
@@ -160,6 +168,63 @@
 
   .links a{white-space:nowrap}
   @media (max-width:640px){.top nav{flex-wrap:wrap;gap:14px;padding:16px 0} .links{width:100%;justify-content:space-between;gap:10px;font-size:14px} .links a.extra{display:none}}
+
+  /* ---- herontwerp 13 nov 2026 ---- */
+  .links a.pill{background:var(--lamp);padding:7px 14px;border-radius:999px;margin:-7px 0}
+  .links a.pill:hover{background:#F0C566;color:var(--ink)}
+  .facts{display:flex;flex-wrap:wrap;gap:8px 18px;margin:26px 0 0;padding:0;list-style:none;font-size:14px;font-weight:500;color:var(--ink)}
+  .facts li{display:flex;align-items:center;gap:7px}
+  .facts li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--field)}
+  /* Seasonal band (verwijderen na 25 dec: blok seizoen:start/end) */
+  .season{background:var(--ink);color:#E6EAF1;padding:56px 0;position:relative;overflow:hidden}
+  .season::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+     background:radial-gradient(circle at 12% 30%,rgba(255,255,255,.18) 0 1.5px,transparent 2px) 0 0/46px 46px,
+                radial-gradient(circle at 60% 70%,rgba(255,255,255,.12) 0 1px,transparent 1.5px) 0 0/31px 31px}
+  .season .wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:48px;align-items:center;position:relative;z-index:1}
+  .season .kicker{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--lamp)}
+  .season h2{color:#fff;margin:10px 0 12px}
+  .season p{margin:0 0 24px;max-width:30em;color:#C9D0DD}
+  .season .btn-lamp{background:var(--lamp);border-color:var(--lamp);color:var(--ink)}
+  .season .btn-lamp:hover{background:#F0C566;border-color:#F0C566}
+  .season .btn-ghost{color:#fff;border-color:rgba(255,255,255,.55)}
+  .season .btn-ghost:hover{background:rgba(255,255,255,.1)}
+  .duo{display:flex;justify-content:center;gap:0;padding:10px 0}
+  .duo a{display:block;width:46%;max-width:250px;transition:transform .25s ease}
+  .duo a:first-child{transform:rotate(-4deg) translateX(14px)}
+  .duo a:last-child{transform:rotate(3.5deg) translate(-14px,18px)}
+  .duo a:hover{transform:rotate(0) translateY(-6px);z-index:2}
+  .duo img{border-radius:3px;box-shadow:0 22px 40px -14px rgba(0,0,0,.6)}
+  /* Book cards: a little life */
+  .book picture{transition:transform .25s ease}
+  .book:hover picture{transform:translateY(-4px)}
+  .book .badge,.jcard .badge{display:inline-block;margin-left:6px;background:var(--lamp);color:var(--ink);border-radius:999px;padding:1px 8px;font-size:11px;letter-spacing:.05em;vertical-align:2px}
+  .book h3 a{text-decoration:none} .book h3 a:hover{color:var(--band)}
+  /* Journeys wide card */
+  .jcard{display:grid;grid-template-columns:220px 1fr 1.15fr;gap:32px;align-items:center;padding:28px;border-radius:6px;background:#F4EBE4}
+  .jcard img.cover{border-radius:2px;box-shadow:0 14px 26px -12px rgba(30,42,68,.45)}
+  .jcard h3{font-size:27px;margin:0 0 4px}
+  .jcard .meta{font-size:13.5px;font-weight:600;color:#8A4B2D}
+  .jcard p{font-size:15.5px;color:var(--muted);margin:10px 0 16px}
+  .jcard .stores{font-size:13.5px;color:var(--muted);margin:12px 0 0}
+  .jcompare{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:0}
+  .jcompare figure{margin:0}
+  .jcompare img{border:1px solid var(--line);border-radius:3px;background:#fff;aspect-ratio:700/906;object-fit:cover}
+  .jcompare figcaption{font-size:13px;color:var(--muted);padding-top:8px;line-height:1.35}
+  .jcompare figcaption b{display:block;color:var(--ink);font-weight:600}
+  footer .cols{display:flex;gap:28px;flex-wrap:wrap}
+  @media (max-width:900px){
+    .season .wrap{grid-template-columns:1fr;gap:28px}
+    .duo{order:-1} .duo a{max-width:200px}
+    .jcard{grid-template-columns:150px 1fr;gap:20px}
+    .jcompare{grid-column:1/-1}
+  }
+  @media (max-width:640px){
+    .links a.pill{padding:5px 10px;margin:-5px 0}
+    .season{padding:40px 0}
+    .jcard{grid-template-columns:1fr;padding:18px} .jcard img.cover{max-width:170px}
+  }
+  @media (prefers-reduced-motion:reduce){.duo a,.book picture{transition:none}}
+  @media (max-width:640px){.mh{display:none}}
 </style>
 <style>
   .freepage{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:center;padding:48px 0 0}
@@ -167,7 +232,9 @@
   .freepage h1{font-family:Fraunces,Georgia,serif;font-variation-settings:"SOFT" 100;font-weight:650;font-size:clamp(32px,4.4vw,48px);line-height:1.08;margin:8px 0 12px}
   .freepage .kick{font-size:13px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--field)}
   .freepage p{color:var(--muted)} .freepage .row{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0 10px}
-  .freepage .small{font-size:14px} .back{display:inline-block;margin-top:18px;font-weight:500}
+  .freepage .small{font-size:14px} .freepage .small a{color:var(--ink);font-weight:500}
+  .freepage .bookpage{font-size:15px;margin:4px 0 0} .freepage .bookpage a{color:var(--ink);font-weight:600;text-decoration:none;border-bottom:2px solid var(--lamp)}
+  .freepage .bookpage a:hover{border-color:var(--ink)} .back{display:inline-block;margin-top:18px;font-weight:500}
   @media (max-width:800px){.freepage{grid-template-columns:1fr;gap:24px;padding-top:24px}}
 </style>
 </head>
@@ -176,7 +243,7 @@
   <div class="wrap">
     <nav>
       <a class="brand" href="../../"><img src="../../assets/logo-mark.svg" alt=""><span><b>Polder</b><small>INK PRESS</small></span></a>
-      <div class="links"><a href="../../#books">Cozy States</a><a href="../../cozy-journeys/">Cozy Journeys</a><a href="../../color-cozy-places/">Workbook</a><a class="extra" href="../../#free">Free pages</a><a class="social-link" href="https://www.pinterest.com/polderinkpress/">Pinterest</a><a class="social-link" href="https://www.instagram.com/polderinkpress/">Instagram</a></div>
+      <div class="links"><a href="../../#books"><span class="mh">Cozy </span>States</a><a href="../../cozy-journeys/"><span class="mh">Cozy </span>Journeys</a><a href="../../color-cozy-places/">Workbook</a><a class="pill" href="../../#free">Free pages</a></div>
     </nav>
   </div>
 </header>
@@ -187,7 +254,8 @@
     <h1>Sunset beach picnic</h1>
     <p>A picnic on the sand under the palms as the sun goes down. Print it on letter or A4 paper, grab your pencils and enjoy a slow evening.</p>
     <div class="row"><a class="btn btn-dark" href="../hawaii-sunset-picnic.pdf" download>Download the free PDF</a><a class="btn btn-light" href="https://www.amazon.com/dp/B0HMPRHBPT?maas=maas_adg_BD86F4B4A2EB781BA061A9988198CC47_afap_abs&amp;ref_=aa_maas&amp;tag=maas">See Cozy Hawaii on Amazon</a></div>
-    <p class="small">This page comes from Cozy Hawaii, a coloring book for adults by Polder Ink Press. Free for personal use; please share the link instead of the file.</p>
+    <p class="bookpage"><a href="../../cozy-hawaii/">Look inside Cozy Hawaii</a>: more pages and all places in the book.</p>
+    <p class="small">This page comes from <a href="../../cozy-hawaii/">Cozy Hawaii</a>, a coloring book for adults by Polder Ink Press. Free for personal use; please share the link instead of the file.</p>
     <a class="back" href="../../#free">More free coloring pages</a>
   </div>
 </main>
@@ -196,7 +264,7 @@
   <div class="bar">
     <div class="wrap">
       <div>© 2026 Polder Ink Press. Cozy States and Cozy Journeys Coloring Books. <a href="/privacy.html" style="color:inherit">Privacy</a></div>
-      <div class="social"><a href="https://www.pinterest.com/polderinkpress/">Pinterest</a><a href="https://www.instagram.com/polderinkpress/">Instagram</a></div>
+      <div class="social"><a href="https://www.pinterest.com/polderinkpress/">Pinterest</a><a href="https://www.instagram.com/polderinkpress/">Instagram</a><a href="https://www.youtube.com/channel/UCqlYk4_pJVqhll4RZ__-unw">YouTube</a></div>
     </div>
   </div>
 </footer>
