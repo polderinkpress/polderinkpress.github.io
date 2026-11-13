@@ -540,6 +540,15 @@
   .soongrid figcaption{font-size:14.5px;font-weight:600;margin-top:10px} .soongrid figcaption span{display:block;font-weight:400;color:var(--muted);font-size:13.5px}
   .soongrid figcaption .tag{display:table;background:var(--lamp);color:var(--ink);border-radius:999px;padding:1px 9px;font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin-bottom:4px}
   @media (max-width:560px){.soon{padding:18px}.soongrid{grid-template-columns:1fr 1fr;gap:20px 14px}}
+  /* binnenkort:eind */
+  /* ---- afwerking 13 nov 2026: papierkorrel, handgetekend accent, contrast ---- */
+  :root{--grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .35 0 0 0 0 .3 0 0 0 0 .22 0 0 0 .075 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");--field-text:#3F6638}
+  body{background:var(--paper) var(--grain)}
+  .top,.hero{background:var(--sky) var(--grain)}
+  .serie,.special,.potm,.soon,.jcard,.serie-w{background-image:var(--grain)}
+  .hand{position:relative;white-space:nowrap;z-index:0}
+  .hand::after{content:"";position:absolute;left:-2%;right:-2%;bottom:.02em;height:.3em;z-index:-1;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 16' preserveAspectRatio='none'%3E%3Cpath d='M3 10 C 38 3, 72 14, 108 8 S 172 3, 197 9' fill='none' stroke='%23E9B44C' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E") center/100% 100% no-repeat}
+  .serie .tag,.potm-label{color:var(--field-text)} .serie-w .tag{color:#94531C}
 </style>
 </head>
 <body>
@@ -556,7 +565,7 @@
   <div class="hero">
     <div class="wrap">
       <div class="hero-text">
-        <h1>Slow down and color your way through cozy places.</h1>
+        <h1>Slow down and color your way through <span class="hand">cozy places.</span></h1>
         <p class="lead">Coloring books for adults, filled with real landmarks, small towns, local food and quiet moments. Choose your pace: bold and easy, or a little more detail.</p>
         <div class="btns"><a class="btn btn-dark" href="#books">See the books</a><a class="btn btn-light" href="#free">Get free pages</a></div>
         <ul class="facts"><li>Single-sided pages</li><li>Every place captioned</li><li>Large 8.5 x 11 in</li></ul>
@@ -829,6 +838,12 @@
           <div class="txt"><h3><a href="free/hawaii-sunset-picnic/">Sunset beach picnic</a></h3>
           <p>A picnic on the sand under the palms as the sun goes down.</p>
           <div class="row"><a class="btn btn-dark" href="free/hawaii-sunset-picnic.pdf" download>Download PDF</a><a class="more" href="https://www.amazon.com/dp/B0HMPRHBPT?maas=maas_adg_BD86F4B4A2EB781BA061A9988198CC47_afap_abs&amp;ref_=aa_maas&amp;tag=maas">From Cozy Hawaii</a></div></div>
+        </article>
+        <article class="freecard" id="free-sc">
+          <a class="pic" href="free/scotland-bothy-night/"><picture><source type="image/webp" srcset="free/scotland-bothy-night-preview.webp"><img src="free/scotland-bothy-night-preview.png" alt="Free colouring page: Bothy night in the Highlands" width="765" height="990" loading="lazy"></picture></a>
+          <div class="txt"><h3><a href="free/scotland-bothy-night/">Bothy night in the Highlands</a></h3>
+          <p>A crackling fire, a pot of tea and a cosy evening in a mountain bothy.</p>
+          <div class="row"><a class="btn btn-dark" href="free/scotland-bothy-night.pdf" download>Download PDF</a><a class="more" href="https://www.amazon.com/dp/B0HQXBJBWT?maas=maas_adg_0AFF72747B32D4748C366FA12D9F3B52_afap_abs&amp;ref_=aa_maas&amp;tag=maas">From Cozy Scotland</a></div></div>
         </article>
       </div>
       <!-- free:end -->

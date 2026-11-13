@@ -158,6 +158,14 @@
   @media (max-width:640px){.top nav{flex-wrap:wrap;gap:14px;padding:16px 0} .links{width:100%;justify-content:space-between;gap:10px;font-size:14px}}
   .links a.pill{background:var(--lamp);padding:7px 14px;border-radius:999px;margin:-7px 0;color:var(--ink)}
   @media (max-width:640px){.mh{display:none} .links a.pill{padding:5px 10px;margin:-5px 0}}
+
+  /* ---- afwerking 13 nov 2026: papierkorrel, handgetekend accent, contrast ---- */
+  :root{--grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .35 0 0 0 0 .3 0 0 0 0 .22 0 0 0 .075 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");--field-text:#3F6638}
+  body{background:var(--paper) var(--grain)}
+  .top,.hero{background:var(--sky) var(--grain)}
+  .serie,.special,.potm,.soon,.jcard,.serie-w{background-image:var(--grain)}
+  .hand{position:relative;white-space:nowrap;z-index:0}
+  .hand::after{content:"";position:absolute;left:-2%;right:-2%;bottom:.02em;height:.3em;z-index:-1;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 16' preserveAspectRatio='none'%3E%3Cpath d='M3 10 C 38 3, 72 14, 108 8 S 172 3, 197 9' fill='none' stroke='%23E9B44C' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E") center/100% 100% no-repeat}
 </style>
 </head>
 <body>
@@ -175,7 +183,7 @@
     <div class="wrap">
       <div class="hero-text">
         <div class="kicker">More detail, no tiny spaces <b>New</b></div>
-        <h1>Cozy Journeys: slow travel, one page at a time.</h1>
+        <h1>Cozy Journeys: <span class="hand">slow travel,</span> one page at a time.</h1>
         <p class="lead">Colouring books for adults with a little more detail: stone walls, slate roofs and rocky shores, never fiddly. Simple enough to relax with after a long day, detailed enough to stay interesting.</p>
       </div>
       <figure class="cover">

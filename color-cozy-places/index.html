@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,500..700,100&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root{--ink:#1E2A44;--field:#4E7A45;--field-light:#6E9A5C;--ditch:#9CC3DA;--sky:#E8F0F2;--paper:#FFFDF9;--lamp:#E9B44C;--muted:#566074;--line:#E3E0D8;--acc:#B36B2B;--cream:#F6F0E6}
+  :root{--ink:#1E2A44;--field:#4E7A45;--field-light:#6E9A5C;--ditch:#9CC3DA;--sky:#E8F0F2;--paper:#FFFDF9;--lamp:#E9B44C;--muted:#566074;--line:#E3E0D8;--acc:#94531C;--cream:#F6F0E6}
   *{box-sizing:border-box} html{scroll-behavior:smooth}
   body{margin:0;overflow-x:hidden;background:var(--paper);color:var(--ink);font:400 17px/1.65 Poppins,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
   img{max-width:100%;height:auto;display:block} picture{display:block} a{color:inherit}
@@ -61,6 +61,8 @@
 
   .links a{white-space:nowrap}
   @media (max-width:640px){.top nav{flex-wrap:wrap;gap:14px;padding:16px 0} .links{width:100%;justify-content:space-between;gap:10px;font-size:14px}}
+  /* papierkorrel (13 nov 2026) */
+  body{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .35 0 0 0 0 .3 0 0 0 0 .22 0 0 0 .075 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")} .top,.hero{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .35 0 0 0 0 .3 0 0 0 0 .22 0 0 0 .075 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
   /* nav zoals homepage (13 nov 2026) */
   .links a.pill{background:var(--lamp);padding:7px 14px;border-radius:999px;margin:-7px 0;color:var(--ink)} .links a.pill:hover{background:#F0C566;color:var(--ink)}
   @media (max-width:640px){.mh{display:none} .links a.pill{padding:5px 10px;margin:-5px 0}}
