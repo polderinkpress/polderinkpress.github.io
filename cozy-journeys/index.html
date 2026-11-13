@@ -166,6 +166,12 @@
   .serie,.special,.potm,.soon,.jcard,.serie-w{background-image:var(--grain)}
   .hand{position:relative;white-space:nowrap;z-index:0}
   .hand::after{content:"";position:absolute;left:-2%;right:-2%;bottom:.02em;height:.3em;z-index:-1;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 16' preserveAspectRatio='none'%3E%3Cpath d='M3 10 C 38 3, 72 14, 108 8 S 172 3, 197 9' fill='none' stroke='%23E9B44C' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E") center/100% 100% no-repeat}
+  /* gratis plaat (13 nov 2026) */
+  .jfree{display:grid;grid-template-columns:240px 1fr;gap:36px;align-items:center;background:var(--sky) var(--grain);border-radius:6px;padding:24px}
+  .jfree img{border:1px solid var(--line);background:#fff;border-radius:3px}
+  .jfree .btn-dark{background:var(--ink);color:var(--paper);border-color:var(--ink)} .jfree .btn-dark:hover{background:#2B3A5C}
+  .jfree h2{margin:6px 0 8px} .jfree p{color:var(--muted);margin:0 0 18px;max-width:34em}
+  @media (max-width:640px){.jfree{grid-template-columns:1fr;padding:18px}.jfree img{max-width:220px}}
 </style>
 </head>
 <body>
@@ -236,6 +242,20 @@
           <picture><source type="image/webp" srcset="../assets/journeys/compare-journeys-scotland.webp"><img src="../assets/journeys/compare-journeys-scotland.jpg" width="700" height="906" loading="lazy" alt="Colouring page from Cozy Scotland: Eilean Donan Castle with a stone bridge, mountains and pine trees, with more detail"></picture>
           <figcaption><b>Cozy Journeys</b>More detail, no tiny spaces. Cozy Scotland.</figcaption>
         </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="free-page">
+    <div class="wrap">
+      <div class="jfree">
+        <a href="../free/scotland-bothy-night/"><picture><source type="image/webp" srcset="../free/scotland-bothy-night-preview.webp"><img src="../free/scotland-bothy-night-preview.png" alt="Free colouring page: Bothy night in the Highlands" width="765" height="990" loading="lazy"></picture></a>
+        <div>
+          <span class="kicker">Try a free page</span>
+          <h2>Bothy night in the Highlands</h2>
+          <p>A crackling fire, a pot of tea and a cosy evening in a mountain bothy. Print this page from Cozy Scotland for free and see if the detail suits you.</p>
+          <a class="btn btn-dark" href="../free/scotland-bothy-night/">Get the free page</a>
+        </div>
       </div>
     </div>
   </section>
