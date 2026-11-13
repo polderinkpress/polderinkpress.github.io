@@ -61,12 +61,15 @@
 
   .links a{white-space:nowrap}
   @media (max-width:640px){.top nav{flex-wrap:wrap;gap:14px;padding:16px 0} .links{width:100%;justify-content:space-between;gap:10px;font-size:14px}}
+  /* nav zoals homepage (13 nov 2026) */
+  .links a.pill{background:var(--lamp);padding:7px 14px;border-radius:999px;margin:-7px 0;color:var(--ink)} .links a.pill:hover{background:#F0C566;color:var(--ink)}
+  @media (max-width:640px){.mh{display:none} .links a.pill{padding:5px 10px;margin:-5px 0}}
 </style>
 </head>
 <body>
 <header class="top"><div class="wrap"><nav>
   <a class="brand" href="../"><img src="../assets/logo-mark.svg" alt=""><span><b>Polder</b><small>INK PRESS</small></span></a>
-  <div class="links"><a href="../#books">Cozy States</a><a href="../cozy-journeys/">Cozy Journeys</a><a href="./" aria-current="page">Workbook</a><a class="extra" href="../#free">Free pages</a></div>
+  <div class="links"><a href="../#books"><span class="mh">Cozy </span>States</a><a href="../cozy-journeys/"><span class="mh">Cozy </span>Journeys</a><a href="./" aria-current="page">Workbook</a><a class="pill" href="../#free">Free pages</a></div>
 </nav></div></header>
 <main>
   <div class="hero"><div class="wrap">
@@ -124,7 +127,7 @@
 </main>
 <footer><div class="polder" aria-hidden="true"></div><div class="bar"><div class="wrap">
   <div>© 2026 Polder Ink Press. Cozy States and Cozy Journeys Coloring Books. <a href="/privacy.html" style="color:inherit">Privacy</a></div>
-  <div><a href="https://www.pinterest.com/polderinkpress/">Pinterest</a> · <a href="https://www.instagram.com/polderinkpress/">Instagram</a></div>
+  <div><a href="https://www.pinterest.com/polderinkpress/">Pinterest</a> · <a href="https://www.instagram.com/polderinkpress/">Instagram</a> · <a href="https://www.youtube.com/channel/UCqlYk4_pJVqhll4RZ__-unw">YouTube</a></div>
 </div></div></footer>
 <script>
 (function(){var bs=document.querySelectorAll('.switch button'),ls=document.querySelectorAll('.lv');
