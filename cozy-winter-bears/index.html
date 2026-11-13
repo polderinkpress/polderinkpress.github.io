@@ -109,6 +109,39 @@
   @media (max-width:900px){.hero .wrap{grid-template-columns:1fr;gap:28px} .hero .cover{max-width:240px} .gallery{grid-template-columns:1fr 1fr;gap:16px}}
   @media (max-width:640px){.top nav{flex-wrap:wrap;gap:14px;padding:16px 0} .links{width:100%;justify-content:space-between;gap:10px;font-size:14px} .links a.pill{padding:5px 10px;margin:-5px 0} .mh{display:none} .free{grid-template-columns:1fr;padding:18px} .free img{max-width:220px}}
   @media (prefers-reduced-motion:reduce){.more img{transition:none}}
+  /* vergroten (13 nov 2026) */
+  .gallery a{display:block;cursor:zoom-in;position:relative}
+  .gallery a::after{content:"";position:absolute;right:10px;top:10px;width:30px;height:30px;border-radius:50%;opacity:0;transition:opacity .2s;
+    background:var(--ink) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2.4' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='6'/%3E%3Cpath d='M20 20l-4.5-4.5M11 8v6M8 11h6'/%3E%3C/svg%3E") center/18px no-repeat}
+  .gallery a:hover::after,.gallery a:focus-visible::after{opacity:.9}
+  dialog.lb{border:0;padding:0;background:transparent;max-width:none;max-height:none;width:100vw;height:100vh;margin:0}
+  dialog.lb::backdrop{background:rgba(20,26,40,.88)}
+  .lb .box{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:16px}
+  .lb img{max-height:calc(100vh - 110px);width:auto;max-width:100%;background:#fff;border-radius:3px}
+  .lb p{color:#E6EAF1;margin:0;font-size:15px}
+  .lb button{position:absolute;border:0;border-radius:50%;width:46px;height:46px;background:rgba(255,255,255,.14);color:#fff;font-size:24px;cursor:pointer}
+  .lb button:hover{background:rgba(255,255,255,.28)} .lb .x{top:14px;right:14px} .lb .vorige{left:14px;top:50%} .lb .volgende{right:14px;top:50%}
+  /* kleurschuif */
+  .colorit{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+  .sheet{background:#fff;padding:12px;border-radius:3px;box-shadow:0 22px 44px -18px rgba(30,42,68,.45);max-width:480px}
+  .reveal{position:relative;overflow:hidden;--p:58%}
+  .reveal img{width:100%;height:auto} .reveal picture+picture img{position:absolute;inset:0;height:100%;clip-path:inset(0 calc(100% - var(--p)) 0 0)}
+  .reveal .edge{position:absolute;top:0;bottom:0;left:var(--p);width:0;pointer-events:none}
+  .reveal .edge::before{content:"";position:absolute;top:0;bottom:0;left:-1.5px;width:3px;background:var(--lamp)}
+  .reveal .edge::after{content:"";position:absolute;top:50%;left:-19px;width:38px;height:38px;margin-top:-19px;border-radius:50%;background:var(--lamp) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231E2A44' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 6l-6 6 6 6M15 6l6 6-6 6'/%3E%3C/svg%3E") center/20px no-repeat;box-shadow:0 4px 12px rgba(30,42,68,.3)}
+  .reveal input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize}
+  .reveal:has(input:focus-visible) .edge::after{outline:3px solid var(--ink);outline-offset:2px}
+  .sheet figcaption{font-size:13px;color:var(--muted);padding:8px 2px 0}
+  /* vaste koopbalk op mobiel */
+  .buybar{display:none}
+  @media (max-width:760px){
+    .buybar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:20;align-items:center;gap:12px;padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+      background:rgba(255,253,249,.97);border-top:1px solid var(--line);box-shadow:0 -8px 24px -12px rgba(30,42,68,.3);transform:translateY(110%);transition:transform .25s ease}
+    .buybar.on{transform:none} .buybar img{width:38px;height:auto;border-radius:2px} .buybar b{flex:1;font:650 16px/1.2 Fraunces,Georgia,serif;font-variation-settings:"SOFT" 100}
+    .buybar .btn{padding:10px 16px;font-size:14px} footer{padding-bottom:70px}
+    .colorit{grid-template-columns:1fr;gap:20px} .sheet{margin:0 auto}
+  }
+  @media (prefers-reduced-motion:reduce){.buybar{transition:none}}
   :root{--band:#3A6E9E}
 </style>
 </head>
@@ -130,7 +163,7 @@
         <span class="kicker">Winter special · 50 states</span>
         <h1>Cozy Winter Bears: a coloring book for adults</h1>
         <p class="lead">Two teddy bears on a snowy road trip across America: sledding, skating, snowshoeing and hot cocoa by the fire. 50 detailed scenes, one for every state, each on its own page.</p>
-        <div class="btns"><a class="btn btn-dark" href="https://www.amazon.com/dp/B0HP7YYRQV?maas=maas_adg_28CF0BD05E5CE738EB25584F2FBDE3DE_afap_abs&amp;ref_=aa_maas&amp;tag=maas">View on Amazon</a><a class="btn btn-light" href="#inside">Look inside</a></div>
+        <div class="btns" id="kopen"><a class="btn btn-dark" href="https://www.amazon.com/dp/B0HP7YYRQV?maas=maas_adg_28CF0BD05E5CE738EB25584F2FBDE3DE_afap_abs&amp;ref_=aa_maas&amp;tag=maas">View on Amazon</a><a class="btn btn-light" href="#inside">Look inside</a></div>
         <ul class="facts"><li>50 detailed scenes</li><li>Single-sided pages</li><li>Every place captioned</li><li>8.5 x 11 in paperback</li></ul>
       </div>
     </div>
@@ -142,12 +175,12 @@
       <h2>Look inside</h2>
       <p class="sub">Six of the 50 pages. Each scene sits on its own page with a blank back, so markers won't bleed onto the next one.</p>
       <div class="gallery">
-<figure><picture><source type="image/webp" srcset="../assets/books/wb/01.webp"><img src="../assets/books/wb/01.jpg" alt="Coloring page from Cozy Winter Bears: Alabama" width="520" height="673" loading="lazy"></picture><figcaption>01 · Alabama</figcaption></figure>
-<figure><picture><source type="image/webp" srcset="../assets/books/wb/11.webp"><img src="../assets/books/wb/11.jpg" alt="Coloring page from Cozy Winter Bears: Hawaii" width="520" height="673" loading="lazy"></picture><figcaption>11 · Hawaii</figcaption></figure>
-<figure><picture><source type="image/webp" srcset="../assets/books/wb/21.webp"><img src="../assets/books/wb/21.jpg" alt="Coloring page from Cozy Winter Bears: Massachusetts" width="520" height="673" loading="lazy"></picture><figcaption>21 · Massachusetts</figcaption></figure>
-<figure><picture><source type="image/webp" srcset="../assets/books/wb/30.webp"><img src="../assets/books/wb/30.jpg" alt="Coloring page from Cozy Winter Bears: New Jersey" width="520" height="673" loading="lazy"></picture><figcaption>30 · New Jersey</figcaption></figure>
-<figure><picture><source type="image/webp" srcset="../assets/books/wb/40.webp"><img src="../assets/books/wb/40.jpg" alt="Coloring page from Cozy Winter Bears: South Carolina" width="520" height="673" loading="lazy"></picture><figcaption>40 · South Carolina</figcaption></figure>
-<figure><picture><source type="image/webp" srcset="../assets/books/wb/50.webp"><img src="../assets/books/wb/50.jpg" alt="Coloring page from Cozy Winter Bears: Wyoming" width="520" height="673" loading="lazy"></picture><figcaption>50 · Wyoming</figcaption></figure>
+<figure><a href="../assets/books/wb/01-lg.webp" data-cap="01 · Alabama"><picture><source type="image/webp" srcset="../assets/books/wb/01.webp"><img src="../assets/books/wb/01.jpg" alt="Coloring page from Cozy Winter Bears: Alabama" width="520" height="673" loading="lazy"></picture></a><figcaption>01 · Alabama</figcaption></figure>
+<figure><a href="../assets/books/wb/11-lg.webp" data-cap="11 · Hawaii"><picture><source type="image/webp" srcset="../assets/books/wb/11.webp"><img src="../assets/books/wb/11.jpg" alt="Coloring page from Cozy Winter Bears: Hawaii" width="520" height="673" loading="lazy"></picture></a><figcaption>11 · Hawaii</figcaption></figure>
+<figure><a href="../assets/books/wb/21-lg.webp" data-cap="21 · Massachusetts"><picture><source type="image/webp" srcset="../assets/books/wb/21.webp"><img src="../assets/books/wb/21.jpg" alt="Coloring page from Cozy Winter Bears: Massachusetts" width="520" height="673" loading="lazy"></picture></a><figcaption>21 · Massachusetts</figcaption></figure>
+<figure><a href="../assets/books/wb/30-lg.webp" data-cap="30 · New Jersey"><picture><source type="image/webp" srcset="../assets/books/wb/30.webp"><img src="../assets/books/wb/30.jpg" alt="Coloring page from Cozy Winter Bears: New Jersey" width="520" height="673" loading="lazy"></picture></a><figcaption>30 · New Jersey</figcaption></figure>
+<figure><a href="../assets/books/wb/40-lg.webp" data-cap="40 · South Carolina"><picture><source type="image/webp" srcset="../assets/books/wb/40.webp"><img src="../assets/books/wb/40.jpg" alt="Coloring page from Cozy Winter Bears: South Carolina" width="520" height="673" loading="lazy"></picture></a><figcaption>40 · South Carolina</figcaption></figure>
+<figure><a href="../assets/books/wb/50-lg.webp" data-cap="50 · Wyoming"><picture><source type="image/webp" srcset="../assets/books/wb/50.webp"><img src="../assets/books/wb/50.jpg" alt="Coloring page from Cozy Winter Bears: Wyoming" width="520" height="673" loading="lazy"></picture></a><figcaption>50 · Wyoming</figcaption></figure>
       </div>
     </div>
   </section>
@@ -157,6 +190,26 @@
       <h2>All 50 states in the book</h2>
       <p class="sub">Every page is captioned with its place, and the book ends with an overview of all places.</p>
       <ol class="places"><li><b>Alabama</b> <span>Little River Canyon</span></li><li><b>Alaska</b> <span>Denali National Park</span></li><li><b>Arizona</b> <span>South Rim, Grand Canyon</span></li><li><b>Arkansas</b> <span>Buffalo National River</span></li><li><b>California</b> <span>Yosemite Valley</span></li><li><b>Colorado</b> <span>San Juan Mountains</span></li><li><b>Connecticut</b> <span>East Haddam, Connecticut River</span></li><li><b>Delaware</b> <span>Bombay Hook National Wildlife Refuge</span></li><li><b>Florida</b> <span>St. Augustine</span></li><li><b>Georgia</b> <span>Driftwood Beach, Georgia coast</span></li><li><b>Hawaii</b> <span>Waikīkī, O‘ahu</span></li><li><b>Idaho</b> <span>Lake Coeur d&#x27;Alene</span></li><li><b>Illinois</b> <span>Starved Rock State Park</span></li><li><b>Indiana</b> <span>Brown County</span></li><li><b>Iowa</b> <span>Madison County</span></li><li><b>Kansas</b> <span>Flint Hills</span></li><li><b>Kentucky</b> <span>Cumberland Falls</span></li><li><b>Louisiana</b> <span>St. Charles Avenue, New Orleans</span></li><li><b>Maine</b> <span>West Quoddy Head</span></li><li><b>Maryland</b> <span>Chesapeake Bay</span></li><li><b>Massachusetts</b> <span>Walden Pond, Concord</span></li><li><b>Michigan</b> <span>Tahquamenon Falls</span></li><li><b>Minnesota</b> <span>Split Rock Lighthouse</span></li><li><b>Mississippi</b> <span>Biloxi</span></li><li><b>Missouri</b> <span>Ha Ha Tonka State Park</span></li><li><b>Montana</b> <span>Rocky Mountains of Montana</span></li><li><b>Nebraska</b> <span>Sandhills</span></li><li><b>Nevada</b> <span>Lake Tahoe</span></li><li><b>New Hampshire</b> <span>Lakes Region</span></li><li><b>New Jersey</b> <span>Jersey Shore</span></li><li><b>New Mexico</b> <span>White Sands National Park</span></li><li><b>New York</b> <span>Brooklyn Bridge</span></li><li><b>North Carolina</b> <span>Blue Ridge Mountains</span></li><li><b>North Dakota</b> <span>a frozen lake in North Dakota</span></li><li><b>Ohio</b> <span>Marblehead Lighthouse</span></li><li><b>Oklahoma</b> <span>Beavers Bend State Park</span></li><li><b>Oregon</b> <span>Crater Lake National Park</span></li><li><b>Pennsylvania</b> <span>Independence Hall, Philadelphia</span></li><li><b>Rhode Island</b> <span>Narragansett Bay</span></li><li><b>South Carolina</b> <span>Congaree National Park</span></li><li><b>South Dakota</b> <span>Sylvan Lake, Black Hills</span></li><li><b>Tennessee</b> <span>Fall Creek Falls State Park</span></li><li><b>Texas</b> <span>Big Bend National Park</span></li><li><b>Utah</b> <span>Bryce Canyon National Park</span></li><li><b>Vermont</b> <span>Central Vermont</span></li><li><b>Virginia</b> <span>Skyline Drive, Shenandoah National Park</span></li><li><b>Washington</b> <span>Puget Sound</span></li><li><b>West Virginia</b> <span>Babcock State Park</span></li><li><b>Wisconsin</b> <span>dairy country</span></li><li><b>Wyoming</b> <span>Upper Geyser Basin, Yellowstone</span></li></ol>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap colorit">
+      <figure class="sheet" style="margin:0">
+        <div class="reveal" id="reveal">
+          <picture><source type="image/webp" srcset="../assets/books/wb/kleur-lijn.webp"><img src="../assets/books/wb/kleur-lijn.jpg" width="760" height="1018" alt="Line drawing from Cozy Winter Bears: Minnesota" loading="lazy"></picture>
+          <picture><source type="image/webp" srcset="../assets/books/wb/kleur-kleur.webp"><img src="../assets/books/wb/kleur-kleur.jpg" width="760" height="1018" alt="" aria-hidden="true" loading="lazy"></picture>
+          <span class="edge" aria-hidden="true"></span>
+          <input type="range" min="0" max="100" value="58" step="1" aria-label="Drag to compare the line drawing with a colored version">
+        </div>
+        <figcaption>Drag to color it in · 23 Minnesota</figcaption>
+      </figure>
+      <div>
+        <span class="kicker">See it colored</span>
+        <h2>From line art to a finished page</h2>
+        <p class="sub">One page from the book, colored in as an example. Your colors, your pace: there is no wrong way to color a cozy place.</p>
+        <a class="btn btn-dark" href="https://www.amazon.com/dp/B0HP7YYRQV?maas=maas_adg_28CF0BD05E5CE738EB25584F2FBDE3DE_afap_abs&amp;ref_=aa_maas&amp;tag=maas">View on Amazon</a>
+      </div>
     </div>
   </section>
 
@@ -192,6 +245,9 @@
     </div>
   </section>
 </main>
+<div class="buybar" id="buybar" aria-hidden="true"><img src="../assets/covers/cover-WB-400.webp" alt="" width="38" height="49"><b>Cozy Winter Bears</b><a class="btn btn-dark" href="https://www.amazon.com/dp/B0HP7YYRQV?maas=maas_adg_28CF0BD05E5CE738EB25584F2FBDE3DE_afap_abs&amp;ref_=aa_maas&amp;tag=maas" tabindex="-1">View on Amazon</a></div>
+<dialog class="lb" id="lb" aria-label="Enlarged coloring page"><div class="box"><img id="lbimg" src="" alt=""><p id="lbcap"></p></div>
+  <button class="x" type="button" aria-label="Close">&times;</button><button class="vorige" type="button" aria-label="Previous page">&lsaquo;</button><button class="volgende" type="button" aria-label="Next page">&rsaquo;</button></dialog>
 <footer>
   <div class="polder" aria-hidden="true"></div>
   <div class="bar">
@@ -201,6 +257,29 @@
     </div>
   </div>
 </footer>
+<script>
+(function(){
+  // Vergroten: de links werken ook zonder JS (opent het beeld)
+  var lb=document.getElementById('lb'),im=document.getElementById('lbimg'),cap=document.getElementById('lbcap'),
+      as=[].slice.call(document.querySelectorAll('.gallery a')),i=0;
+  function toon(n){i=(n+as.length)%as.length;im.src=as[i].href;im.alt=as[i].querySelector('img').alt;cap.textContent=as[i].dataset.cap}
+  if(lb.showModal){
+    as.forEach(function(a,n){a.addEventListener('click',function(ev){ev.preventDefault();toon(n);lb.showModal()})});
+    lb.querySelector('.x').onclick=function(){lb.close()};
+    lb.querySelector('.vorige').onclick=function(){toon(i-1)};
+    lb.querySelector('.volgende').onclick=function(){toon(i+1)};
+    lb.addEventListener('click',function(ev){if(ev.target===lb||ev.target.classList.contains('box'))lb.close()});
+    lb.addEventListener('keydown',function(ev){if(ev.key==='ArrowLeft')toon(i-1);if(ev.key==='ArrowRight')toon(i+1)});
+  }
+  // Kleurschuif
+  var r=document.getElementById('reveal');
+  if(r){var inp=r.querySelector('input');inp.addEventListener('input',function(){r.style.setProperty('--p',inp.value+'%')})}
+  // Vaste koopbalk (mobiel) zodra de koopknoppen bovenaan uit beeld zijn
+  var bar=document.getElementById('buybar'),k=document.getElementById('kopen');
+  if('IntersectionObserver' in window){new IntersectionObserver(function(es){var uit=!es[0].isIntersecting&&es[0].boundingClientRect.top<0;
+    bar.classList.toggle('on',uit);bar.setAttribute('aria-hidden',uit?'false':'true');bar.querySelector('a').tabIndex=uit?0:-1}).observe(k)}
+})();
+</script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "2db7e8ad05924711898485ad36fd425a"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>

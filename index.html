@@ -532,6 +532,14 @@
   }
   @media (prefers-reduced-motion:reduce){.duo a,.book picture{transition:none}}
   @media (max-width:640px){.mh{display:none}}
+  /* binnenkort (book_pages.py) */
+  .soon{margin-top:64px;padding:28px;border-radius:6px;background:var(--sky)}
+  .soon h3{font-size:24px;margin:0 0 4px} .soon > p{margin:0 0 22px;color:var(--muted);font-size:15px}
+  .soongrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:24px 20px}
+  .soongrid figure{margin:0;position:relative} .soongrid img{border-radius:2px;box-shadow:0 12px 22px -12px rgba(30,42,68,.45)}
+  .soongrid figcaption{font-size:14.5px;font-weight:600;margin-top:10px} .soongrid figcaption span{display:block;font-weight:400;color:var(--muted);font-size:13.5px}
+  .soongrid figcaption .tag{display:table;background:var(--lamp);color:var(--ink);border-radius:999px;padding:1px 9px;font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin-bottom:4px}
+  @media (max-width:560px){.soon{padding:18px}.soongrid{grid-template-columns:1fr 1fr;gap:20px 14px}}
 </style>
 </head>
 <body>
@@ -704,6 +712,9 @@
           <a class="amazon" data-book="CO" href="https://www.amazon.com/dp/B0HMP3WBZY?maas=maas_adg_7C69CC619DDD4E0ADAEF18E6EF0B006B_afap_abs&amp;ref_=aa_maas&amp;tag=maas">View on Amazon</a>
         </article>
       </div>
+      <!-- binnenkort:start (gegenereerd door scripts/book_pages.py uit catalogus.json) -->
+      <div class="soon" id="coming-soon"><h3>Coming soon</h3><p>New books on their way to Amazon. <a href="https://www.pinterest.com/polderinkpress/">Follow us on Pinterest</a> to see them first.</p><div class="soongrid"><figure><picture><source type="image/webp" srcset="assets/covers/cover-TN-400.webp"><img src="assets/covers/cover-TN.jpg" alt="Cover of Cozy Tennessee coloring book (coming soon)" width="600" height="776" loading="lazy"></picture><figcaption><span class="tag">Coming soon</span>Cozy Tennessee<span>40 bold &amp; easy scenes</span></figcaption></figure><figure><picture><source type="image/webp" srcset="assets/covers/cover-MT-400.webp"><img src="assets/covers/cover-MT.jpg" alt="Cover of Cozy Montana coloring book (coming soon)" width="600" height="776" loading="lazy"></picture><figcaption><span class="tag">Coming soon</span>Cozy Montana<span>40 bold &amp; easy scenes</span></figcaption></figure><figure><picture><source type="image/webp" srcset="assets/covers/cover-AZ-400.webp"><img src="assets/covers/cover-AZ.jpg" alt="Cover of Cozy Arizona coloring book (coming soon)" width="600" height="776" loading="lazy"></picture><figcaption><span class="tag">Coming soon</span>Cozy Arizona<span>40 bold &amp; easy scenes</span></figcaption></figure><figure><picture><source type="image/webp" srcset="assets/covers/cover-AK-400.webp"><img src="assets/covers/cover-AK.jpg" alt="Cover of Cozy Alaska coloring book (coming soon)" width="600" height="776" loading="lazy"></picture><figcaption><span class="tag">Coming soon</span>Cozy Alaska<span>40 bold &amp; easy scenes</span></figcaption></figure></div></div>
+      <!-- binnenkort:end -->
     </div>
   </section>
 
