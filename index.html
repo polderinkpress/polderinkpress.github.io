@@ -472,6 +472,10 @@
   .freecard .row{display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;font-size:14.5px}
   .freecard .btn{padding:9px 18px;font-size:14px}
   .freecard .more{font-weight:500;color:var(--muted)}
+  /* bundle (15 nov 2026) */
+  .bundlebanner{display:block;background:var(--sky);border-radius:6px;padding:16px;margin-bottom:36px;text-decoration:none;color:var(--ink)}
+  .bundlebanner img{width:100%;height:auto;border-radius:4px} .bb-txt{display:block;margin-top:10px} .bb-txt strong{display:block;font-size:20px}
+  .bb-go{font-weight:600;border-bottom:2px solid var(--lamp)}
   /* free pages (8 nov 2026) */
   .freecard .pic{display:block} .freecard h3 a{text-decoration:none} .freecard h3 a:hover{color:var(--field)}
   .freecard .txt{display:flex;flex-direction:column;flex:1}
@@ -821,6 +825,9 @@
         <h2>Free coloring pages</h2>
         <p>Free pages from our books. Print them on letter or A4 paper, grab your pencils and enjoy a slow evening.</p>
       </div>
+      <!-- bundle:start (scripts/free_bundle.py) -->
+      <a class="bundlebanner" href="free/christmas-winter-bundle/"><picture><source type="image/webp" srcset="free/christmas-winter-bundle-preview.webp"><img src="free/christmas-winter-bundle-preview.png" alt="5 Free Christmas &amp; Winter Coloring Pages for Adults" width="1500" height="630" loading="lazy"></picture><span class="bb-txt"><strong>New: 5 Free Christmas &amp; Winter Coloring Pages for Adults</strong> Five pages, one free PDF. <span class="bb-go">Get the free bundle</span></span></a>
+      <!-- bundle:end -->
       <!-- free:start (gegenereerd door scripts/free_pages.py uit free-rotatie.json) -->
         <article class="freecard potm" id="free-ny">
           <a class="pic" href="free/new-york-cider-donuts/"><picture><source type="image/webp" srcset="free/new-york-cider-donuts-preview.webp"><img src="free/new-york-cider-donuts-preview.png" alt="Free coloring page: Cider donuts at the orchard" width="765" height="990" loading="lazy"></picture></a>
